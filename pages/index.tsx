@@ -1,17 +1,13 @@
 import React, { ReactNode } from 'react';
-import { CssBaseline, ThemeProvider, Button } from '@material-ui/core';
-import { Header } from '../src/components';
-import { theme } from '../src';
+import { Container, Button } from '@material-ui/core';
+import { connect } from 'react-redux';
+import { State } from '../src';
 
-const Home = (): ReactNode => (
-  <div>
-    <CssBaseline />
-    <ThemeProvider theme={theme}>
-      <Header title="TV Database | Home" />
-      Hello World
-      <Button>asd</Button>
-    </ThemeProvider>
-  </div>
+const Home = ({ movies }: State): ReactNode => (
+  <Container>
+    <Button>Hello World</Button>
+    <div>{JSON.stringify(movies)}</div>
+  </Container>
 );
 
-export default Home;
+export default connect((state) => state, null)(Home);
