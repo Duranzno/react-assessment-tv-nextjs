@@ -17,9 +17,11 @@ jobs:
     - name: Build Site
       run: |
         yarn 
-        yarn next build && yarn next export -o docs
-        
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v1.4.0
+        yarn next build && yarn next export -o dist
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        build_dir: docs 
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist
