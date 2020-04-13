@@ -27,7 +27,7 @@ Create a project from scratch to represent a web app with the following design:
 - [ ] 3. Use Material-UI for designing the components: [https://material-ui.com/](https://material-ui.com/)
 - [ ] 4. Use Redux for managing the application state: [https://redux.js.org/](https://redux.js.org/)
 - [ ] 5. Add unit testing for the components using Jest ([https://jestjs.io/en/](https://jestjs.io/en/)) or React Testing Library ([https://github.com/testing-library/react-testing-library](https://github.com/testing-library/react-testing-library))
-- [ ] 6. Set up ESLint ([https://eslint.org/](https://eslint.org/)) and Prettier ([https://prettier.io/](https://prettier.io/)) and follow Airbnb's style guide.
+- [x] 6. Set up ESLint ([https://eslint.org/](https://eslint.org/)) and Prettier ([https://prettier.io/](https://prettier.io/)) and follow Airbnb's style guide.
 - [ ] 7. Use TVMaze API ([http://www.tvmaze.com/](http://www.tvmaze.com/)) for fetching the data.
 
 ### _App_
@@ -74,6 +74,7 @@ yarn test
 👤 **Alejandro Duran**
 
 - Website: duranzno.now.sh
+- Website: [duranzno.now.sh](https://duranzno.now.sh)
 - Twitter: [@duranzno\_](https://twitter.com/duranzno_)
 - Github: [@duranzno](https://github.com/duranzno)
 - LinkedIn: [@duranzno](https://linkedin.com/in/duranzno)
