@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Runs a set of commands using the runners shell
+    - name: Build Site
+      run: |
+        yarn 
+        yarn next build && yarn next export -o docs
+        
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v1.4.0
+      with:
+        # Build directory to deploy
+        build_dir: docs
