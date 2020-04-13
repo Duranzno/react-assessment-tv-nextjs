@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
 import Head from 'next/head';
-import { CssBaseline } from '@material-ui/core';
 
 interface Props {
   title: string;
@@ -8,7 +7,6 @@ interface Props {
 
 export const Header = ({ title }: Props): ReactElement => (
   <Head>
-    <CssBaseline />
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />

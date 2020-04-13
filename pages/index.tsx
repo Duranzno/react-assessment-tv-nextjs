@@ -1,10 +1,16 @@
 import React, { ReactNode } from 'react';
-import { Header } from '../components';
+import { CssBaseline, ThemeProvider, Button } from '@material-ui/core';
+import { Header } from '../src/components';
+import { theme } from '../src';
 
 const Home = (): ReactNode => (
   <div>
-    <Header title="TV Database | Home" />
-    Hello World
+    <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <Header title="TV Database | Home" />
+      Hello World
+      <Button>asd</Button>
+    </ThemeProvider>
   </div>
 );
 
