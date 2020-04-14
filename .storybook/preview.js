@@ -1,7 +1,7 @@
 // #region Global Imports
-import { addDecorator, addParameters } from "@storybook/react";
-import { withKnobs } from "@storybook/addon-knobs";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+const { addDecorator, addParameters } =require("@storybook/react");
+const { withKnobs } =require("@storybook/addon-knobs");
+const { INITIAL_VIEWPORTS } =require("@storybook/addon-viewport");
 // #endregion Global Imports
 
 // #region Local Imports

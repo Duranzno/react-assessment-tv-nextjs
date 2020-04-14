@@ -24,11 +24,11 @@ Create a project from scratch to represent a web app with the following design:
 - [x] 1. Use Next.js framework for development: [https://nextjs.org/](https://nextjs.org/)
 
 - [x] 2. Do not use classes, use React Hooks [https://reactjs.org/docs/hooks-intro.html](https://reactjs.org/docs/hooks-intro.html)
-- [ ] 3. Use Material-UI for designing the components: [https://material-ui.com/](https://material-ui.com/)
-- [ ] 4. Use Redux for managing the application state: [https://redux.js.org/](https://redux.js.org/)
-- [ ] 5. Add unit testing for the components using Jest ([https://jestjs.io/en/](https://jestjs.io/en/)) or React Testing Library ([https://github.com/testing-library/react-testing-library](https://github.com/testing-library/react-testing-library))
+- [x] 3. Use Material-UI for designing the components: [https://material-ui.com/](https://material-ui.com/)
+- [x] 4. Use Redux for managing the application state: [https://redux.js.org/](https://redux.js.org/)
+- [x] 5. Add unit testing for the components using Jest ([https://jestjs.io/en/](https://jestjs.io/en/)) or React Testing Library ([https://github.com/testing-library/react-testing-library](https://github.com/testing-library/react-testing-library))
 - [x] 6. Set up ESLint ([https://eslint.org/](https://eslint.org/)) and Prettier ([https://prettier.io/](https://prettier.io/)) and follow Airbnb's style guide.
-- [ ] 7. Use TVMaze API ([http://www.tvmaze.com/](http://www.tvmaze.com/)) for fetching the data.
+- [] 7. Use TVMaze API ([http://www.tvmaze.com/](http://www.tvmaze.com/)) for fetching the data.
 
 ### _App_
 

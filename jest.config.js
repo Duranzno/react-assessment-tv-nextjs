@@ -1,5 +1,5 @@
 module.exports = {
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  moduleFileExtensions: ['json', 'js', 'jsx', 'ts', 'tsx'],
   testMatch: ['**/*.(test|spec).(ts|tsx)'],
   globals: {
     'ts-jest': {
@@ -11,6 +11,5 @@ module.exports = {
   coveragePathIgnorePatterns: ['/node_modules/'],
   setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts'],
   coverageReporters: ['json', 'lcov', 'text', 'text-summary'],
-
   preset: 'ts-jest',
 };
