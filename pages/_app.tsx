@@ -7,11 +7,10 @@ import { Store } from 'redux';
 import { Provider } from 'react-redux';
 import { theme } from '../src/theme';
 import { Header } from '../src/components';
-import { store as baseStore } from '../src';
+import { store as baseStore } from '../src/redux';
 
 function MyApp(props: AppProps & { store: Store }): JSX.Element {
   const { Component, pageProps, store } = props;
-
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
