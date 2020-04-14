@@ -6,9 +6,11 @@ const { INITIAL_VIEWPORTS } =require("@storybook/addon-viewport");
 
 // #region Local Imports
 // import {withRedux} from "./Decorators"
+import {StylesDecorator} from './Decorators'
 // #endregion Local Imports
 
 addDecorator(withKnobs);
+addDecorator(StylesDecorator);
 // addDecorator(withRedux());
 
 addParameters({

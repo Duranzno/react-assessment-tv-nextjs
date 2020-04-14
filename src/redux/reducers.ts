@@ -1,11 +1,11 @@
-import { Schedule } from '../models';
+import { TVSchedule } from '../models';
 import { ActionTypes } from './types';
 
 export interface State {
-  schedule: Schedule;
+  schedule: TVSchedule[];
 }
 export const initialState: State = {
-  schedule: {},
+  schedule: [],
 };
 export interface Action {
   type: ActionTypes;

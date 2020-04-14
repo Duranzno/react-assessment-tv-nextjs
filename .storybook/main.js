@@ -1,12 +1,13 @@
 const path = require('path');
 module.exports = {
-  stories: ['../test/**/*.stories.[tj]s[x]'],
+  stories: ['../**/**/*.stories.[tj]s[x]'],
   addons: [
     '@storybook/addon-actions/register',
-    '@storybook/addon-links',
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-storysource/register',
+    // '@storybook/addon-links',
+    // '@storybook/addon-knobs/register',
+    // '@storybook/addon-storysource/register',
     '@storybook/addon-viewport/register',
+    // 'storybook-addon-material-ui/register',
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

@@ -1,17 +1,17 @@
-export interface Schedule {
+export interface TVSchedule {
   id?: number;
   url?: string;
   name?: string;
   season?: number;
   number?: number | null;
-  airdate?: Date;
+  airdate?: Date | string;
   airtime?: string;
-  airstamp?: Date;
+  airstamp?: Date | string;
   runtime?: number;
   image?: null;
   summary?: null | string;
   show?: Show;
-  links?: ScheduleLinks;
+  _links?: ScheduleLinks;
 }
 
 export interface ScheduleLinks {
@@ -31,7 +31,7 @@ export interface Show {
   genres?: string[];
   status?: string;
   runtime?: number;
-  premiered?: Date;
+  premiered?: Date | string;
   officialSite?: null | string;
   schedule?: ScheduleClass;
   rating?: Rating;
@@ -42,7 +42,7 @@ export interface Show {
   image?: Image | null;
   summary?: string;
   updated?: number;
-  links?: ShowLinks;
+  _links?: ShowLinks;
 }
 
 export interface Externals {
