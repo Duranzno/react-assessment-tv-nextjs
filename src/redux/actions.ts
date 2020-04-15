@@ -1,8 +1,14 @@
-import { State, Action } from './reducers';
 import { ActionTypes } from './types';
+import { TVSchedule } from '../models';
 
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-export const initDataAction = (state: State): Action => ({
+export const initDataAction = (schedules: TVSchedule[]) => ({
   type: ActionTypes.INIT_DATA_ACTION,
-  data: state,
+  schedules,
+});
+export const closeModal = () => ({
+  type: ActionTypes.CLOSE_MODAL,
+});
+export const selectTVSchedule = (selectedId: number) => ({
+  type: ActionTypes.FILL_MODAL,
+  selectedId,
 });

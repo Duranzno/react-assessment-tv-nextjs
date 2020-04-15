@@ -1,8 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { yellow, grey } from '@material-ui/core/colors';
+import { yellow, grey, pink } from '@material-ui/core/colors';
 
 export const theme = createMuiTheme({
   palette: {
+    primary: pink,
+    secondary: grey,
     warning: yellow,
   },
   overrides: {

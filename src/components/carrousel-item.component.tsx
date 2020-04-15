@@ -17,7 +17,8 @@ interface Props {
   onClick: Function;
 }
 export const CarrouselItem = ({ schedule, onClick }: Props) => {
-  const image = schedule.show.image.medium || schedule.show.image.original;
+  const image = schedule?.show?.image?.medium
+      || schedule?.show?.image?.original;
   const classes = makeStyles(({ breakpoints }) => ({
     card: { maxWidth: '15rem' },
     cover: {
@@ -69,10 +70,16 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
       justifyContent: 'space-between',
     },
   }))();
-
+  const {
+    id,
+    airdate,
+    name,
+    summary,
+    show,
+  } = schedule;
   return (
     <Card className={classes.card}>
-      <CardActionArea onClick={() => onClick(schedule.id)}>
+      <CardActionArea onClick={() => onClick(id)}>
         <div className={classes.wrapper}>
           <div className={classes.coverOverlay}>
             <Chip
@@ -82,19 +89,19 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
               className={cx([classes.chip, classes.chipYellow])}
             />
             <Chip
-              label={schedule.airdate}
+              label={airdate}
               className={cx([classes.chip, classes.chipGrey])}
             />
           </div>
-          <img className={classes.cover} src={image} alt={schedule.show.name} />
+          <img className={classes.cover} src={image} alt={name} />
         </div>
         <CardContent>
           <Typography variant="body1">
-            <b>{schedule.show.name}</b>
+            <b>{show.name}</b>
           </Typography>
-          <Typography variant="caption">{schedule.name}</Typography>
+          <Typography variant="caption">{name}</Typography>
           <div className={classes.text}>
-            {ReactHtmlParser(schedule.summary || schedule.show.summary)}
+            {ReactHtmlParser(summary || show.summary)}
           </div>
         </CardContent>
       </CardActionArea>

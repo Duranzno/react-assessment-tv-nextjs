@@ -13,7 +13,11 @@ export interface TVSchedule {
   show?: Show;
   _links?: ScheduleLinks;
 }
-
+export const filterFaultySchedules = (f: TVSchedule) => (
+  (f?.show?.image?.medium || f?.show?.image?.original)
+  && (f?.show.summary || f?.summary)
+  && (f.id && f.airdate && f.name && f.show)
+);
 export interface ScheduleLinks {
   self?: Self;
 }

@@ -13,7 +13,7 @@ export const Slider = ({ schedules, onClick }: SliderProps) => {
   const [index, setIndex] = useState(0);
   const prev = () => setIndex(index === 0 ? schedules.length : 0);
   const next = () => setIndex(index === schedules.length - 1 ? 0 : index + 1);
-  if (schedules.some((s) => !s.show) || !schedules[index].show) {
+  if (schedules.some((s) => !s?.show) || !schedules[index]?.show) {
     return null;
   }
   return (

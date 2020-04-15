@@ -5,3 +5,4 @@ export * from './navbar.component';
 export * from './slider.component';
 export * from './carrousel.component';
 export * from './pager.component';
+export * from './buttons.component';

@@ -1,3 +1,5 @@
 export enum ActionTypes {
   INIT_DATA_ACTION = 'INIT_DATA_ACTION',
+  FILL_MODAL = 'FILL_MODAL',
+  CLOSE_MODAL='CLOSE_MODAL',
 }
