@@ -20,7 +20,7 @@ interface Props {
 }
 export const CarrouselItem = ({ schedule, onClick }: Props) => {
   const image = schedule.show.image.medium || schedule.show.image.original;
-  const classes = makeStyles({
+  const classes = makeStyles(({ breakpoints }) => ({
     card: { maxWidth: '15rem' },
     cover: {
       width: '100%',
@@ -44,7 +44,18 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
       marginRight: '1rem',
     },
     chipGrey: {
-      opacity: '0.7',
+      backgroundColor: 'rgba(0,0,0,0.5)',
+
+      borderRadius: 100,
+      color: '#ffffff',
+      textTransform: 'none',
+      width: '100%',
+      '&:hover': {
+        backgroundColor: 'rgba(255, 255, 255, 0.32)',
+      },
+      [breakpoints.up('sm')]: {
+        // width: 'auto',
+      },
     },
     chipYellow: {
       marginLeft: '0.5rem',
@@ -59,7 +70,7 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
-  })();
+  }))();
 
   return (
     <Card className={classes.card}>
