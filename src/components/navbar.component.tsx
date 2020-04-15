@@ -28,13 +28,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import FilterListIcon from '@material-ui/icons/FilterList';
 
-const TextButton = ({ children, ...typeProps }) => (
+const TextButton = ({ children, typeProps }) => (
   <Button>
-    <Typography
-      variant="body1"
-      {...typeProps}
-      style={{ textTransform: 'none' }}
-    >
+    <Typography variant="body1" style={{ textTransform: 'none' }}>
       {children}
     </Typography>
   </Button>
@@ -139,7 +135,8 @@ export const SecondNavbar = () => {
         value={value}
         textColor="primary"
         onChange={handleChange}
-        aria-label="disabled tabs example">
+        aria-label="disabled tabs example"
+      >
         <Tab className={classes.tab} label="Home" />
         <Tab className={classes.tab} label="Blog" disabled />
       </Tabs>
@@ -205,7 +202,8 @@ export function Navbar() {
             aria-label="open drawer"
             aria-controls={menuId}
             aria-haspopup="true"
-            onClick={handleProfileMenuOpen}>
+            onClick={handleProfileMenuOpen}
+          >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>

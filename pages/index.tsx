@@ -1,11 +1,13 @@
 import React, { ReactNode, useEffect } from 'react';
-import { Container, Button } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import { AppProps } from 'next/app';
 import { useDispatch, useSelector } from 'react-redux';
 import { initDataAction } from '../src/redux';
 import { fetchTVShows } from '../src/api';
 import { TVSchedule } from '../src/models';
-import { CarrouselItem } from '../src/components';
+import {
+ Navbar, Slider, Footer, Carrousel 
+} from '../src/components';
 
 export const mockSchedule: TVSchedule = {
   id: 1836593,
@@ -65,21 +67,21 @@ export const mockSchedule: TVSchedule = {
 
 export default (props: AppProps): ReactNode => {
   // Regular redux hooks usage
-  const storeValue = useSelector((state) => state);
+  const schedules = useSelector((state) => state.schedules);
   const dispatch = useDispatch();
   useEffect(() => {
-    fetchTVShows().then((schedule) => {
-      dispatch(initDataAction({ schedule }));
+    fetchTVShows().then((s) => {
+      dispatch(initDataAction({ schedules: s }));
     });
   }, []);
   return (
     <Container>
-      <Button>Hello World</Button>
-      <div>{JSON.stringify(storeValue[1])}</div>
-      <CarrouselItem
-        schedule={mockSchedule}
-        onClick={() => console.log(mockSchedule)}
-      />
+      <Navbar />
+      <Typography variant="h2">Recommended For You</Typography>
+      {/* <Slider onClick={console.log} schedules={schedules} /> */}
+      <Typography variant="h2">Recommended For You</Typography>
+      <Carrousel readAll={console.log} schedules={schedules} />
+      <Footer />
     </Container>
   );
 };

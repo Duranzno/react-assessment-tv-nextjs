@@ -22,7 +22,9 @@
     "react-dom": "16.13.1",
     "react-html-parser": "^2.0.2",
     "react-redux": "^7.2.0",
+    "react-slick": "^0.25.2",
     "redux": "^4.0.5",
+    "slick-carousel": "^1.8.1",
     "storybook-addon-material-ui": "^0.9.0-alpha.21"
   },
   "devDependencies": {

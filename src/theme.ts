@@ -1,16 +1,25 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { yellow } from '@material-ui/core/colors';
+import { yellow, grey } from '@material-ui/core/colors';
 
 export const theme = createMuiTheme({
   palette: {
     warning: yellow,
   },
   overrides: {
-    MuiChip: {
-      colorPrimary: {
-        color: 'white',
-        backgroundColor: yellow[700],
+    MuiIconButton: {
+      colorSecondary: {
+        color: grey[100],
+        backgroundColor: grey[800],
+        '&:hover': {
+          backgroundColor: grey[800],
+        },
       },
+    },
+    MuiChip: {
+      // colorPrimary: {
+      //   color: 'white',
+      //   backgroundColor: yellow[700],
+      // },
     },
     MuiCardMedia: {
       root: {

@@ -44,7 +44,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'no-console':'off'
+    'no-console': 'off',
+    'implicit-arrow-linebreak':'off',
   },
   overrides: [
     {

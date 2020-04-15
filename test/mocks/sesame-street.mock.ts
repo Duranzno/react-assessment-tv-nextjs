@@ -1,6 +1,6 @@
 import { TVSchedule } from '../../src/models';
 
-export const mockSchedule: TVSchedule = {
+export const sesameStreetSchedule: TVSchedule = {
   id: 1836593,
   url:
     'http://www.tvmaze.com/episodes/1836593/sesame-street-s50-special-elmos-playdate',

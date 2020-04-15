@@ -2,10 +2,10 @@ import { TVSchedule } from '../models';
 import { ActionTypes } from './types';
 
 export interface State {
-  schedule: TVSchedule[];
+  schedules: TVSchedule[];
 }
 export const initialState: State = {
-  schedule: [],
+  schedules: [],
 };
 export interface Action {
   type: ActionTypes;
