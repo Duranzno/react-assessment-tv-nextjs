@@ -1,10 +1,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { CarrouselItem, Carrousel, Pager } from '../../src/components';
+import { CarrouselItem, Pager, Carrousel } from '../../src/components';
 import { ncisSchedule } from '../mocks/ncis.mock';
-import { sesameStreetSchedule } from '../mocks/sesame-street.mock';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { sesameStreetSchedule } from '../mocks/sesame-street.mock';
 
 export default {
   component: CarrouselItem,
@@ -15,9 +15,23 @@ export const item = () => (
   <CarrouselItem schedule={ncisSchedule} onClick={action('Clicked on Item ')} />
 );
 
-// export const slick = () => (
-//   <Carrousel schedules={[ncisSchedule, sesameStreetSchedule]} />
-// );
+export const slick = () => (
+  <Carrousel
+    schedules={[
+      ncisSchedule,
+      sesameStreetSchedule,
+      ncisSchedule,
+      sesameStreetSchedule,
+
+      ncisSchedule,
+      sesameStreetSchedule,
+      ncisSchedule,
+      sesameStreetSchedule,
+    ]}
+    viewAll={action('viewAll')}
+    viewSpecific={action('view Specific')}
+  />
+);
 const Container = ({ children }) => (
   <div style={{ width: '50rem' }}>{children}</div>
 );
@@ -43,6 +57,8 @@ export const PagerBothDisabled = () => (
       prev={action('click prev')}
       disablePrev
       disableNext
-    />
+    >
+      <>Children</>
+    </Pager>
   </Container>
 );

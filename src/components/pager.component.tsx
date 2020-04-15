@@ -38,7 +38,7 @@ export const Pager = ({
     <div className={classes.pager}>
       <Button
         aria-label="previous"
-        onClick={() => prev}
+        onClick={() => prev()}
         disabled={disablePrev}
         className={classes.pagerBtn}
         {...buttonProps}
@@ -47,7 +47,7 @@ export const Pager = ({
       </Button>
       <Button
         aria-label="next"
-        onClick={() => next}
+        onClick={() => next()}
         disabled={disableNext}
         className={classes.pagerBtn}
         {...buttonProps}

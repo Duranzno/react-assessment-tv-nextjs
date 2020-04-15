@@ -6,8 +6,6 @@ import {
   Typography,
   makeStyles,
   Chip,
-  Box,
-  CardMedia,
 } from '@material-ui/core';
 import ReactHtmlParser from 'react-html-parser';
 import StarIcon from '@material-ui/icons/Star';
