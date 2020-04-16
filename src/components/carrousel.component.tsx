@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { createRef, useState } from 'react';
 import {
   Grid, Typography, Button, makeStyles,
@@ -7,9 +6,16 @@ import SlickSlider from 'react-slick';
 import { TVSchedule } from '../models';
 import { CarrouselItem } from './carrousel-item.component';
 import { Pager } from './pager.component';
+import { setSlickAfterChange } from './slick';
 
-const preSettings = {
+const options = {
   slidesToShow: 4,
+  infinite: false,
+  speed: 500,
+  initialSlide: 0,
+  slidesToScroll: 1,
+  dots: false,
+  arrows: false,
   responsive: [
     {
       breakpoint: 1024,
@@ -34,51 +40,32 @@ const preSettings = {
     },
   ],
 };
-const setSettings = (afterChange: Function) => ({
-  dots: false,
-  arrows: false,
-  afterChange,
-  infinite: false,
-  speed: 500,
-  initialSlide: 0,
-  slidesToScroll: 1,
-  ...preSettings,
-});
+
 interface Props {
   schedules: TVSchedule[];
   viewAll: Function;
   viewSpecific: Function;
 }
 
-export const Carrousel = ({ schedules, viewAll, viewSpecific }: Props) => {
+export const Carrousel = ({ schedules, viewSpecific }: Props) => {
   const refSlick = createRef();
   const [slickIndex, setslickIndex] = useState(0);
+  // @ts-ignore
   const next = () => refSlick?.current?.slickNext();
+  // @ts-ignore
   const prev = () => refSlick?.current?.slickPrev();
   const [isShowingLastElement, setIsShowingLastElement] = useState(false);
 
-  const settings = setSettings((i) => {
-    setslickIndex(i);
-    /* Due to problems accessing the innerstate of react-slick here we
-    calculate the amount of elements that are shown on screen through the
-    breakpoint and the initial configuration and the we calculate if we have
-    reached the last of the carrousel elements with the slick index */
-    let breakpoint = false;
-    try {
-      breakpoint = refSlick?.current?.state?.breakpoint;
-      const maxRowsShown = breakpoint
-        ? preSettings.responsive.find(({ breakpoint: b }) => b === breakpoint)
-          .settings?.slidesToShow || preSettings.slidesToShow
-        : preSettings.slidesToShow;
-      setIsShowingLastElement(schedules.length <= i + maxRowsShown);
-    } catch (error) {
-      console.log(breakpoint);
-      console.error(error);
-    }
+  const afterChange = setSlickAfterChange({
+    options,
+    length: schedules.length,
+    refSlick,
+    setIsShowingLastElement,
+    setslickIndex,
   });
-  const classes = makeStyles(({ spacing }) => ({
+  const classes = makeStyles(({ spacing, breakpoints }) => ({
     root: { padding: spacing(3) },
-    pager: { width: spacing(20) },
+    pager: { [breakpoints.up('md')]: { width: spacing(25) } },
   }))();
   return (
     <>
@@ -86,6 +73,7 @@ export const Carrousel = ({ schedules, viewAll, viewSpecific }: Props) => {
         container
         direction="row"
         justify="space-between"
+        alignItems="flex-end"
         className={classes.root}
       >
         <div>
@@ -94,21 +82,33 @@ export const Carrousel = ({ schedules, viewAll, viewSpecific }: Props) => {
           </Typography>
           <Typography variant="body1">Popular shows airing tonight</Typography>
         </div>
-        <Pager
-          prev={prev}
-          next={next}
-          className={classes.pager}
-          disablePrev={slickIndex === 0}
-          disableNext={isShowingLastElement}
-        >
-          <Button variant="contained" color="primary" onClick={viewAll} disableElevation size="small">
-            <b>
-              View All
-            </b>
-          </Button>
-        </Pager>
+        <div>
+
+          <Pager
+            prev={prev}
+            next={next}
+            className={classes.pager}
+            disablePrev={slickIndex === 0}
+            disableNext={isShowingLastElement}
+          >
+            <Button
+              variant="contained"
+              color="primary"
+              disableElevation
+              size="small"
+            >
+              <b>
+                View All
+              </b>
+            </Button>
+          </Pager>
+        </div>
       </Grid>
-      <SlickSlider ref={refSlick} {...settings}>
+      <SlickSlider
+        ref={refSlick}
+        afterChange={afterChange}
+        {...options}
+      >
         {schedules.map((s) => (
           <CarrouselItem schedule={s} key={`${s.id}`} onClick={viewSpecific} />
         ))}

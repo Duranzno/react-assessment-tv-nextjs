@@ -17,11 +17,11 @@ export const Footer = () => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      [breakpoints.down('md')]: {
+      [breakpoints.down('sm')]: {
         flexDirection: 'column',
         padding: 'unset',
       },
-      padding: '2rem 6rem',
+      padding: '2rem 6rem 0',
       '& > *': {
         margin: spacing(1),
         '& > p': {
@@ -30,7 +30,7 @@ export const Footer = () => {
       },
     },
     '& > hr': {
-      [breakpoints.down('md')]: {
+      [breakpoints.down('sm')]: {
         display: 'none',
       },
     },

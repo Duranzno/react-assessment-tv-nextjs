@@ -3,16 +3,15 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import withRedux from 'next-redux-wrapper';
-import { Store } from 'redux';
 import { Provider } from 'react-redux';
 import { theme } from '../src/theme';
 import { Header } from '../src/components';
-import { store as baseStore } from '../src/redux';
+import { store } from '../src/redux';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function MyApp(props: AppProps & { store: Store }): JSX.Element {
-  const { Component, pageProps, store } = props;
+function MyApp(props: AppProps): JSX.Element {
+  const { Component, pageProps } = props;
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -34,4 +33,4 @@ function MyApp(props: AppProps & { store: Store }): JSX.Element {
   );
 }
 // @ts-ignore
-export default withRedux(baseStore)(MyApp);
+export default (MyApp);

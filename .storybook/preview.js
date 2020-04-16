@@ -6,7 +6,7 @@ const { INITIAL_VIEWPORTS } =require("@storybook/addon-viewport");
 
 // #region Local Imports
 // import {withRedux} from "./Decorators"
-import {StylesDecorator} from './Decorators'
+const {StylesDecorator} = require('./Decorators') 
 // #endregion Local Imports
 
 addDecorator(withKnobs);

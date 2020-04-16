@@ -4,12 +4,9 @@ import { styled } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 
-export const Logo = styled((props) => (
-  <img src="/logo.png" alt="Logo" {...props} />
-))({
-  maxHeight: '40px',
-});
-
+export const Logo = () => (
+  <img src="/logo.png" alt="Logo" style={{ maxHeight: 40 }} />
+);
 export const PagerButton = styled(
   ({ color, ...props }) => <Button {...props} />,
 )((props) => {

@@ -9,11 +9,12 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
     borderRadius: 40,
     backgroundColor: grey[800],
-    [breakpoints.down('md')]: {},
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      minHeight: spacing(60),
+    },
     display: 'flex',
     flexDirection: 'row',
-    minWidth: spacing(45),
-    maxWidth: breakpoints.values.md,
     minHeight: spacing(35),
     maxHeight: spacing(40),
   },
@@ -32,13 +33,17 @@ const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     width: '100%',
     height: 'auto',
     overflow: 'hidden',
-    borderTopRightRadius: 40,
-    borderBottomRightRadius: 40,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPositionY: 'center',
-
-    // maxHeight: spacing(50),
+    [breakpoints.down('sm')]: {
+      borderBottomLeftRadius: 40,
+      borderBottomRightRadius: 40,
+    },
+    [breakpoints.up('sm')]: {
+      borderTopRightRadius: 40,
+      borderBottomRightRadius: 40,
+    },
   },
 }));
 interface ContentProps {

@@ -200,8 +200,7 @@ export function Navbar() {
       <AppBar position="static" color="default">
         <Toolbar>
           <IconButton
-            edge="start"
-            className={classes.menuButton}
+            // className={classes.menuButton}
             color="primary"
             aria-label="open drawer"
             aria-controls={menuId}
@@ -211,7 +210,6 @@ export function Navbar() {
             <MenuIcon />
           </IconButton>
           <Logo />
-
           <div className={classes.search}>
             <InputBase
               placeholder="Search…"
