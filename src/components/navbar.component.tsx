@@ -27,9 +27,10 @@ import PinterestIcon from '@material-ui/icons/Pinterest';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import { Logo } from './buttons.component';
 
-const TextButton = ({ children, typeProps }) => (
-  <Button>
+const TextButton = ({ children, className }) => (
+  <Button className={className}>
     <Typography variant="body1" style={{ textTransform: 'none' }}>
       {children}
     </Typography>
@@ -47,17 +48,12 @@ const useStyles = makeStyles((theme: Theme) => {
     menuButton: {
       marginRight: spacing(2),
     },
-    toolbar: {
-      [breakpoints.up('sm')]: {
-        padding: `${spacing(1)}px ${spacing(10)}px`,
-      },
-    },
     search: {
       position: 'relative',
       borderRadius: shape.borderRadius,
-      backgroundColor: fade(palette.common.white, 0.15),
+      backgroundColor: fade(palette.primary.dark, 0.15),
       '&:hover': {
-        backgroundColor: fade(palette.common.white, 0.25),
+        backgroundColor: fade(palette.primary.dark, 0.25),
       },
       margin: spacing(0, 4),
       // width: '100%',
@@ -118,18 +114,26 @@ export const SecondNavbar = () => {
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
-  const typeProps = { color: 'white' };
   return (
-    <Toolbar className={classes.toolbar}>
-      <TextButton typeProps={typeProps}>
+    <Toolbar>
+      <TextButton className={classes.sectionDesktop}>
         <b>Trending:</b>
       </TextButton>
       {['#Coming Soon', '#FreeWatch', '#WatchNow'].map((s) => (
-        <TextButton typeProps={typeProps} key={s}>
+        <TextButton
+          className={classes.sectionDesktop}
+          key={s}
+        >
           {s}
         </TextButton>
       ))}
-      <Divider orientation="vertical" flexItem style={{ margin: '0 8px' }} />
+      <Divider
+        className={classes.sectionDesktop}
+        orientation="vertical"
+        variant="middle"
+        flexItem
+        style={{ marginRight: '16px', marginLeft: '64px' }}
+      />
       <Tabs
         className={classes.tabs}
         value={value}
@@ -193,12 +197,12 @@ export function Navbar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar className={classes.toolbar}>
+      <AppBar position="static" color="default">
+        <Toolbar>
           <IconButton
             edge="start"
             className={classes.menuButton}
-            color="inherit"
+            color="primary"
             aria-label="open drawer"
             aria-controls={menuId}
             aria-haspopup="true"
@@ -206,9 +210,7 @@ export function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Logo
-          </Typography>
+          <Logo />
 
           <div className={classes.search}>
             <InputBase

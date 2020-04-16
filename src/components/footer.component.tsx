@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button, Divider } from '@material-ui/core';
+import { Logo } from './buttons.component';
 
 const TextButton = ({ children }) => (
   <Button key={JSON.stringify(children)}>
@@ -10,12 +11,15 @@ const TextButton = ({ children }) => (
   </Button>
 );
 export const Footer = () => {
-  const classes = makeStyles(({ spacing }) => ({
+  const classes = makeStyles(({ spacing, breakpoints }) => ({
     root: {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      [breakpoints.down('md')]: {
+        flexDirection: 'column',
+      },
       padding: '2rem 6rem',
       '& > *': {
         margin: spacing(1),
@@ -24,10 +28,15 @@ export const Footer = () => {
         },
       },
     },
+    '& > hr': {
+      [breakpoints.down('md')]: {
+        display: 'none',
+      },
+    },
   }))();
   return (
     <div className={classes.root}>
-      <Typography>Logo</Typography>
+      <Logo />
       <Divider orientation="vertical" flexItem />
 
       {['Privacy Policy', 'Terms of Use', 'Cookie Policy'].map((s) => (

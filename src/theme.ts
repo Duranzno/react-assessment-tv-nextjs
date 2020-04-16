@@ -8,6 +8,9 @@ export const theme = createMuiTheme({
     warning: yellow,
   },
   overrides: {
+    MuiToolbar: {
+      // root
+    },
     MuiIconButton: {
       colorSecondary: {
         color: grey[100],

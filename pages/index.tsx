@@ -38,7 +38,7 @@ export default (): ReactNode => {
   const onClose = () => dispatch(closeModal());
   const open = !!modalData;
   return (
-    <Container>
+    <div>
       <Navbar />
       <Typography variant="h2">Recommended For You</Typography>
       <Slider onClick={openModal} schedules={schedules} />
@@ -73,6 +73,6 @@ export default (): ReactNode => {
         </Dialog>
       </Modal>
       ;
-    </Container>
+    </div>
   );
 };
