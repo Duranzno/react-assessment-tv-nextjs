@@ -1,6 +1,8 @@
 // @ts-nocheck
 import React, { createRef, useState } from 'react';
-import { Grid, Typography, Button } from '@material-ui/core';
+import {
+  Grid, Typography, Button, makeStyles,
+} from '@material-ui/core';
 import SlickSlider from 'react-slick';
 import { TVSchedule } from '../models';
 import { CarrouselItem } from './carrousel-item.component';
@@ -74,26 +76,35 @@ export const Carrousel = ({ schedules, viewAll, viewSpecific }: Props) => {
       console.error(error);
     }
   });
-
+  const classes = makeStyles(({ spacing }) => ({
+    root: { padding: spacing(3) },
+    pager: { width: spacing(20) },
+  }))();
   return (
     <>
-      <Grid container direction="row" justify="space-between">
-        <Grid item container direction="column">
-          <Typography variant="subtitle2">
+      <Grid
+        container
+        direction="row"
+        justify="space-between"
+        className={classes.root}
+      >
+        <div>
+          <Typography variant="h4" color="textPrimary">
             <b>Featured</b>
           </Typography>
-          <Typography variant="body2">
-            Popular shows airing tonight
-          </Typography>
-        </Grid>
+          <Typography variant="body1">Popular shows airing tonight</Typography>
+        </div>
         <Pager
           prev={prev}
           next={next}
+          className={classes.pager}
           disablePrev={slickIndex === 0}
           disableNext={isShowingLastElement}
         >
-          <Button onClick={viewAll}>
-            View All
+          <Button variant="contained" color="primary" onClick={viewAll} disableElevation size="small">
+            <b>
+              View All
+            </b>
           </Button>
         </Pager>
       </Grid>

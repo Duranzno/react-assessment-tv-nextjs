@@ -10,6 +10,7 @@ import {
 import ReactHtmlParser from 'react-html-parser';
 import StarIcon from '@material-ui/icons/Star';
 import cx from 'classnames';
+import { DateTime } from 'luxon';
 import { TVSchedule } from '../models';
 
 interface Props {
@@ -20,7 +21,7 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
   const image = schedule?.show?.image?.medium
       || schedule?.show?.image?.original;
   const classes = makeStyles(({ breakpoints }) => ({
-    card: { maxWidth: '15rem' },
+    card: { maxWidth: '17rem' },
     cover: {
       width: '100%',
       height: '100%',
@@ -30,11 +31,12 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
       overflow: 'hidden',
       display: '-webkit-box',
       '-webkit-line-clamp': 4,
+      paddingBottom: '10px',
       '-webkit-box-orient': 'vertical',
     },
     wrapper: {
       width: '100%',
-      minHeight: '15rem',
+      minHeight: '16rem',
       minWidth: '100%',
       padding: '1rem',
       position: 'relative',
@@ -77,6 +79,7 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
     summary,
     show,
   } = schedule;
+  const dt = DateTime.fromISO(airdate).toLocaleString(DateTime.DATE_MED);
   return (
     <Card className={classes.card}>
       <CardActionArea onClick={() => onClick(id)}>
@@ -89,7 +92,7 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
               className={cx([classes.chip, classes.chipYellow])}
             />
             <Chip
-              label={airdate}
+              label={dt}
               className={cx([classes.chip, classes.chipGrey])}
             />
           </div>

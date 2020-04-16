@@ -19,6 +19,7 @@ export const Footer = () => {
       alignItems: 'center',
       [breakpoints.down('md')]: {
         flexDirection: 'column',
+        padding: 'unset',
       },
       padding: '2rem 6rem',
       '& > *': {

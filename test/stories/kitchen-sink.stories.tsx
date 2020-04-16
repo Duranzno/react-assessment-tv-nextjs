@@ -13,7 +13,7 @@ export default {
 export const PagerButtonDefault = () => (
   <PagerButton
     onClick={() => action('clicked pager button')}
-    color={grey[800]}
+    color="secondary"
   >
     <ArrowLeftIcon />
   </PagerButton>

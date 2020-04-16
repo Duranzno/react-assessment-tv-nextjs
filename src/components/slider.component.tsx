@@ -18,9 +18,17 @@ export const Slider = ({ schedules, onClick }: SliderProps) => {
   }
   return (
     <SliderContent schedule={schedules[index]} onClick={onClick}>
-      <Pager prev={prev} next={next}>
-        <Typography>{`${index + 1}/${schedules.length}`}</Typography>
-      </Pager>
+      <div style={{ maxWidth: '50px' }}>
+
+        <Pager prev={prev} next={next} color="secondary">
+          <Typography
+            variant="caption"
+            style={{ color: 'white' }}
+          >
+            {`${index + 1} / ${schedules.length}`}
+          </Typography>
+        </Pager>
+      </div>
     </SliderContent>
   );
 };

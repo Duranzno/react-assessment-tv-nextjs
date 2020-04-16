@@ -1,15 +1,25 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { yellow, grey, pink } from '@material-ui/core/colors';
+import {
+  yellow, grey, pink, common,
+} from '@material-ui/core/colors';
 
 export const theme = createMuiTheme({
   palette: {
     primary: pink,
     secondary: grey,
     warning: yellow,
+    text: {
+      secondary: common.white,
+    },
   },
   overrides: {
     MuiToolbar: {
       // root
+    },
+    MuiButton: {
+      contained: {
+        borderRadius: 100,
+      },
     },
     MuiIconButton: {
       colorSecondary: {
@@ -21,10 +31,10 @@ export const theme = createMuiTheme({
       },
     },
     MuiChip: {
-      // colorPrimary: {
-      //   color: 'white',
-      //   backgroundColor: yellow[700],
-      // },
+      colorPrimary: {
+        color: common.white,
+        backgroundColor: yellow[700],
+      },
     },
     MuiCardMedia: {
       root: {
