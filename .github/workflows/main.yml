@@ -32,15 +32,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           BRANCH: gh-pages
           FOLDER: .storybookout
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: amondnet/now-deployment@v2
-  #       with:
-  #         zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
-  #         github-token: ${{ secrets.TOKEN }} #Optional
-  #         now-args: '--prod' #Optional
-  #         now-project-id: ${{ secrets.PROJECT_ID}} #Required
-  #         now-org-id: ${{ secrets.ORG_ID}} #Required
-  #         working-directory: ./sub-directory
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: amondnet/now-deployment@v2
+        with:
+          zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
+          github-token: ${{ secrets.TOKEN }} #Optional
+          now-args: '--prod' #Optional
+          now-project-id: ${{ secrets.PROJECT_ID}} #Required
+          now-org-id: ${{ secrets.ORG_ID}} #Required
+          working-directory: ./sub-directory
