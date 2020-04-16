@@ -13,7 +13,9 @@
 
 ## 🚧 [Project](https://github.com/Duranzno/react-assessment-tv-nextjs/projects/1?fullscreen=true)
 
-## ✨ [Demo](https://duranzno.github.io/react-assessment-tv-nextjs/)
+## ✨ [Demo](https://react-assessment-tv-nextjs.now.sh/)
+
+## 📝 [Documentation](https://duranzno.github.io/react-assessment-tv-nextjs/)
 
 ### React Assessment Description
 

@@ -2,6 +2,8 @@
 #Developer Preferences
 examples/
 .vscode/
+.out/
+.storybookout/
 # dependencies
 /node_modules
 /.pnp
@@ -30,3 +32,5 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+.now
