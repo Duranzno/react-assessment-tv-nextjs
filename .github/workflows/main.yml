@@ -6,37 +6,35 @@ on:
   pull_request:
     branches: [master]
 
-  jobs:
-    cypress-run:
-      runs-on: ubuntu-16.04
-      steps:
-        - uses: actions/checkout@v1
-        - uses: cypress-io/github-action@v1
-          with:
-            browser: chrome
-            headless: true
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v1
-        - name: Run Jest
-          uses: stefanoeb/jest-action@1.0.2
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.2
 
-    build:
-      runs-on: ubuntu-latest
+  # cypress-run:
+  #   runs-on: ubuntu-16.04
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - uses: cypress-io/github-action@v1
+  #       with:
+  #         browser: chrome
+  #         headless: true
+  build:
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Site
+        run: |
+          yarn 
+          yarn build-storybook
 
-        # Runs a set of commands using the runners shell
-        - name: Build Site
-          run: |
-            yarn 
-            yarn build-storybook
-
-        - name: Deploy Docs
-          uses: JamesIves/github-pages-deploy-action@releases/v3
-          with:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
-            BRANCH: gh-pages
-            FOLDER: .storybookout
+      - name: Deploy Docs
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: .storybookout
