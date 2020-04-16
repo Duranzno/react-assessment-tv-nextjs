@@ -10,7 +10,7 @@ examples/
 .pnp.js
 # testing
 /coverage
-
+__snapshots__
 # next.js
 /.next/
 /out/
