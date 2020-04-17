@@ -2,7 +2,6 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import { theme } from '../src/theme';
 import { Header } from '../src/components';
