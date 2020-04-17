@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Image from 'material-ui-image';
 import { grey } from '@material-ui/core/colors';
 import { TVSchedule } from '../models';
 

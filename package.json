@@ -16,9 +16,7 @@
     "@material-ui/icons": "^4.9.1",
     "classnames": "^2.2.6",
     "luxon": "^1.23.0",
-    "material-ui-image": "^3.2.3",
     "next": "9.3.4",
-    "next-redux-wrapper": "^5.0.0",
     "node-fetch": "^2.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -26,10 +24,11 @@
     "react-redux": "^7.2.0",
     "react-slick": "^0.25.2",
     "redux": "^4.0.5",
-    "slick-carousel": "^1.8.1",
-    "storybook-addon-material-ui": "^0.9.0-alpha.21"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@testing-library/react": "^10.0.2",
+    "@types/testing-library__react": "^10.0.1",
     "@babel/core": "^7.9.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
