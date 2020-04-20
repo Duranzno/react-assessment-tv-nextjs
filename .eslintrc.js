@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    jest:true,
   },
   extends: [
     'plugin:react/recommended',
@@ -62,7 +63,6 @@ module.exports = {
         'jest/no-identical-title': 'error',
         'jest/prefer-to-have-length': 'warn',
         'jest/valid-expect': 'error',
-        
       },
     },
   ],

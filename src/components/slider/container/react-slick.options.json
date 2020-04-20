@@ -1,0 +1,9 @@
+{
+  "slidesToShow": 1,
+  "infinite": true,
+  "speed": 0,
+  "initialSlide": 0,
+  "slidesToScroll": 1,
+  "dots": false,
+  "arrows": false
+}

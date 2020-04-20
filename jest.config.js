@@ -9,7 +9,7 @@ module.exports = {
     },
   },
   coveragePathIgnorePatterns: ['/node_modules/'],
-  setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts'],
+  // setupFilesAfterEnv: ['<rootDir>/test/jest.setup.ts'],
   coverageReporters: ['json', 'lcov', 'text', 'text-summary'],
   preset: 'ts-jest',
 };

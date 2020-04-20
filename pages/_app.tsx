@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Provider } from 'react-redux';
-import { theme } from '../src/theme';
+import { theme } from '../src/constants/theme';
 import { Header } from '../src/components';
 import { store } from '../src/redux';
 import 'slick-carousel/slick/slick.css';
@@ -31,5 +31,4 @@ function MyApp(props: AppProps): JSX.Element {
     </>
   );
 }
-// @ts-ignore
 export default (MyApp);

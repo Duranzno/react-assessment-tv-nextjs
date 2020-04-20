@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-  stories: ['../test/**/*.stories.[tj]s[x]'],
+  stories: ['../src/**/*.stories.[tj]s[x]'],
   addons: [
     '@storybook/addon-actions/register',
     '@storybook/addon-links',
@@ -9,10 +9,6 @@ module.exports = {
     '@storybook/addon-viewport/register',
   ],
   webpackFinal: async (config, { configType }) => {
-    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-    // You can change the configuration based on that.
-    // 'PRODUCTION' is used when building the static version of storybook.
-
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve('babel-loader'),

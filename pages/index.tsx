@@ -16,7 +16,7 @@ import {
   Navbar,
   Footer,
   Carrousel,
-  Dialog,
+  ProductModal,
 } from '../src/components';
 import { TVSchedule } from '../src/models';
 
@@ -47,7 +47,7 @@ export default ({ schedules }: Props): ReactNode => {
         />
       </Container>
       <Footer />
-      <Dialog
+      <ProductModal
         open={!!modalData}
         schedule={modalData}
         onClose={() => dispatch(closeModal())}
