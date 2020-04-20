@@ -2,6 +2,9 @@ import { makeStyles } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
+  upperCase: {
+    textTransform: 'uppercase',
+  },
   root: {
     borderRadius: 40,
     backgroundColor: grey[800],

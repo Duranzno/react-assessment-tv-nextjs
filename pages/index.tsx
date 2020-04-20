@@ -20,11 +20,13 @@ import {
   ProductModal,
 } from '../src/components';
 import { TVSchedule } from '../src/models';
+import { useStyles } from './_styles';
 
 
 interface Props {
   schedules: TVSchedule[];
 }
+
 const App = ({ schedules }: Props): ReactNode => {
   const state: State = useSelector((s) => s);
   const { modalData, schedules: s } = state;
@@ -34,10 +36,11 @@ const App = ({ schedules }: Props): ReactNode => {
   }, []);
   const openModal = (mD) => dispatch(selectTVSchedule(mD));
   const closeModal2 = () => dispatch(closeModal());
+  const cls = useStyles();
   return (
     <div>
       <Navbar />
-      <Container style={{ paddingTop: 32 }}>
+      <Container className={cls.root}>
         <Typography variant="h4" color="textPrimary" gutterBottom>
           <b>Recommended For You</b>
         </Typography>

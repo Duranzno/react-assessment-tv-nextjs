@@ -9,6 +9,7 @@ import { setSlickAfterChange } from '../../../helpers';
 import { SliderContent } from '../item/slider-item.component';
 import { Pager } from '../../common/pager/pager.component';
 import options from './react-slick.options.json';
+import useStyles from './slider-container.styles';
 
 interface SliderProps {
   schedules: TVSchedule[];
@@ -19,7 +20,7 @@ export const Slider = ({ schedules, onClick }: SliderProps) => {
   const [index, setslickIndex] = useState(0);
   const next = () => refSlick?.current?.slickNext();
   const prev = () => refSlick?.current?.slickPrev();
-
+  const cls = useStyles();
   const { length } = schedules;
   const afterChange = setSlickAfterChange({
     options,
@@ -36,9 +37,9 @@ export const Slider = ({ schedules, onClick }: SliderProps) => {
     >
       {schedules.map((s) => (
         <SliderContent key={s.id} schedule={s} onClick={() => onClick(s.id)}>
-          <div style={{ maxWidth: '50px' }}>
+          <div className={cls.pager}>
             <Pager prev={prev} next={next} color="secondary">
-              <Typography variant="caption" style={{ color: 'white' }}>
+              <Typography variant="caption" color="textSecondary">
                 {`${index + 1} / ${length}`}
               </Typography>
             </Pager>

@@ -2,10 +2,12 @@ import {
   createStyles, makeStyles, fade, Theme,
 } from '@material-ui/core';
 
-const useStyles = makeStyles(({
-  spacing, breakpoints, shape, transitions, palette,
-}: Theme) => createStyles(
-  {
+const useStyles = makeStyles(({ spacing, breakpoints, shape, transitions, palette }: Theme) =>
+  createStyles({
+    cheat: {
+      marginRight: '16px',
+      marginLeft: '64px',
+    },
     grow: {
       flexGrow: 1,
     },
@@ -69,6 +71,5 @@ const useStyles = makeStyles(({
         display: 'none',
       },
     },
-  },
-));
+  }));
 export default useStyles;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { TVSchedule } from '../../../models';
 import useStyles from './slider-item.styles';
-
+import { strings } from '../../../constants/strings';
 
 interface ContentProps {
   schedule: TVSchedule;
@@ -24,11 +24,7 @@ export const SliderContent = ({
   return (
     <div className={classes.root}>
       <div className={classes.info}>
-        <Typography
-          color="textSecondary"
-          variant="caption"
-          style={{ textTransform: 'uppercase' }}
-        >
+        <Typography color="textSecondary" variant="caption" className={classes.upperCase}>
           {genres.slice(0, 3).reduce((prev, cur) => `${prev} ${cur}`, '')}
         </Typography>
 
@@ -36,7 +32,7 @@ export const SliderContent = ({
           <Typography
             color="textSecondary"
             variant="h6"
-            style={{ textTransform: 'uppercase' }}
+            className={classes.upperCase}
           >
             <b>{name}</b>
           </Typography>
@@ -51,15 +47,15 @@ export const SliderContent = ({
           onClick={() => onClick(id)}
           className={classes.button}
         >
-          WATCH TRAILER
+          {strings.watchTrailer}
         </Button>
         {children}
       </div>
-      <div
-        style={{
-          backgroundImage: `url(${img})`,
-          backgroundColor: '#cccccc',
-        }}
+      <img
+        src={img}
+          // backgroundColor: '#cccccc',
+        // }}
+        alt={name}
         className={classes.cover}
       />
     </div>

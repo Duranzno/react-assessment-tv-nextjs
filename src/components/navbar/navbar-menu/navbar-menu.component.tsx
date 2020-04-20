@@ -1,60 +1,51 @@
 import React from 'react';
 import {
-  Typography,
   MenuItem,
   Menu,
-  Grid,
   Divider,
 } from '@material-ui/core';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import useStyles from './navbar-menu.styles';
+import { strings } from '../../../constants/strings';
+import { addDividerElements } from '../../../helpers';
+import { MenuItemContent } from './navbar-menu-item.component';
 
 interface Props {
-  anchorEl: HTMLElement;
+  anchorEl?: HTMLElement;
   menuId: string;
   isMenuOpen: boolean;
   handleMenuClose: () => void;
 }
-
-const MenuItemContent = () => {
-  const classes = useStyles();
-  return (
-    <Grid className={classes.hoverColor} container direction="column">
-      <Grid container item direction="row" justify="space-between">
-        <Typography variant="body2">Main Menu Item #1</Typography>
-        <ArrowRightIcon />
-      </Grid>
-      <Typography variant="body1">Short menu description</Typography>
-    </Grid>
-  );
-};
 export const NavbarMenu = ({
   anchorEl,
   menuId,
   isMenuOpen,
   handleMenuClose,
-}: Props) => (
-  <Menu
-    anchorEl={anchorEl}
-    anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-    id={menuId}
-    keepMounted
-    transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-    open={isMenuOpen}
-    style={{ borderRadius: '50px' }}
-    onClose={handleMenuClose}
-  >
-    {}
-    <MenuItem onClick={handleMenuClose}>
-      <MenuItemContent />
+}: Props) => {
+  const cls = useStyles();
+  const element = (
+    <MenuItem onClick={handleMenuClose} className={cls.item}>
+      <MenuItemContent
+        title={strings.menuItemTitle}
+        description={strings.menuItemDescription}
+      />
     </MenuItem>
-    <Divider variant="middle" />
-    <MenuItem onClick={handleMenuClose}>
-      <MenuItemContent />
-    </MenuItem>
-    <Divider variant="middle" />
-    <MenuItem onClick={handleMenuClose}>
-      <MenuItemContent />
-    </MenuItem>
-  </Menu>
-);
+  );
+
+  return (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+      open={isMenuOpen}
+      PaperProps={{
+        className: cls.root,
+        elevation: 1,
+      }}
+      onClose={handleMenuClose}
+    >
+      {addDividerElements(Array(3).fill(element), <Divider variant="middle" />)}
+    </Menu>
+  );
+};

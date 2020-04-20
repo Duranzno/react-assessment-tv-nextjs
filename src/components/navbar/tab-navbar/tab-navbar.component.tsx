@@ -4,9 +4,9 @@ import {
   Toolbar, Divider, Tabs, Tab,
 } from '@material-ui/core';
 
+import cx from 'classnames';
 import useStyles from './tab-navbar.styles';
 import { TextButton } from '../../common/text-button/text-button.component';
-
 
 interface Props {
   trendingData?: string[];
@@ -32,11 +32,10 @@ export const SecondNavbar = (props: Props) => {
         </TextButton>
       ))}
       <Divider
-        className={classes.sectionDesktop}
+        className={cx(classes.sectionDesktop, classes.cheat)}
         orientation="vertical"
         variant="middle"
         flexItem
-        style={{ marginRight: '16px', marginLeft: '64px' }}
       />
       <Tabs
         className={classes.tabs}

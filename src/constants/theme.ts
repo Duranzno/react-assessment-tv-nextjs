@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, fade } from '@material-ui/core/styles';
 import {
   yellow, grey, pink, common,
 } from '@material-ui/core/colors';
@@ -9,7 +9,13 @@ export const theme = createMuiTheme({
     secondary: grey,
     warning: yellow,
     text: {
+      disabled: grey[500],
       secondary: common.white,
+    },
+  },
+  typography: {
+    h6: {
+      fontWeight: 600,
     },
   },
   overrides: {
