@@ -9,6 +9,7 @@ import { Pager } from '../../common/pager/pager.component';
 import { setSlickAfterChange } from '../../../helpers';
 import options from './react-slick.options.json';
 import useStyles from './carrousel-container.styles';
+import { strings } from '../../../constants/strings';
 
 interface Props {
   schedules: TVSchedule[];
@@ -17,9 +18,9 @@ interface Props {
 }
 
 export const CarrouselContainer = ({ schedules, viewSpecific }: Props) => {
-  const classes = useStyles();
+  const cls = useStyles();
   const refSlick = createRef<Slider>();
-  const [slickIndex, setslickIndex] = useState(null);
+  const [slickIndex, setslickIndex] = useState(0);
   const next = () => refSlick?.current?.slickNext();
   const prev = () => refSlick?.current?.slickPrev();
   const [isShowingLastElement, setIsShowingLastElement] = useState(false);
@@ -38,21 +39,22 @@ export const CarrouselContainer = ({ schedules, viewSpecific }: Props) => {
         direction="row"
         justify="space-between"
         alignItems="flex-end"
-        className={classes.root}
+        className={cls.root}
       >
         <div>
           <Typography variant="h4" color="textPrimary">
-            <b>Featured</b>
+            <b>{strings.featured}</b>
           </Typography>
-          <Typography variant="body1">Popular shows airing tonight</Typography>
+          <Typography variant="body1">
+            <b>{strings.popularShows}</b>
+          </Typography>
         </div>
         <div>
-
           <Pager
             prev={prev}
             next={next}
             color="primary"
-            className={classes.pager}
+            className={cls.pager}
             disablePrev={slickIndex === 0}
             disableNext={isShowingLastElement}
           >
@@ -61,19 +63,14 @@ export const CarrouselContainer = ({ schedules, viewSpecific }: Props) => {
               color="primary"
               disableElevation
               size="small"
+              className={cls.pagerButton}
             >
-              <b>
-                View All
-              </b>
+              <b>{strings.viewAll}</b>
             </Button>
           </Pager>
         </div>
       </Grid>
-      <Slider
-        ref={refSlick}
-        afterChange={afterChange}
-        {...options}
-      >
+      <Slider ref={refSlick} afterChange={afterChange} {...options}>
         {schedules.map((s) => (
           <CarrouselItem schedule={s} key={`${s.id}`} onClick={viewSpecific} />
         ))}

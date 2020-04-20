@@ -21,7 +21,7 @@ const Container = (props) => (
   <div style={{ width: '50rem' }} {...props} />
 );
 
-export const PagerActivePrimary = () => (
+export const PagerSlider = () => (
   <Container>
     <Pager
       next={action('click next')}
@@ -34,19 +34,21 @@ export const PagerActivePrimary = () => (
     </Pager>
   </Container>
 );
-export const PagerActiveSecondary = () => (
+
+export const PagerCarrousel = () => (
   <Container>
     <Pager
       next={action('click next')}
       prev={action('click prev')}
       disablePrev={false}
       disableNext={false}
-      color="secondary"
+      color="primary"
     >
       <>Children</>
     </Pager>
   </Container>
 );
+
 export const PagerBothDisabled = () => (
   <Container>
     <Pager

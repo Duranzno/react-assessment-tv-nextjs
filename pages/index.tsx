@@ -3,12 +3,10 @@ import {
   Container,
   Typography,
 } from '@material-ui/core';
-import { useDispatch, useSelector, Provider } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   initDataAction,
-  selectTVSchedule, closeModal, State,
-  store,
-  initialState } from '../src/redux';
+  selectTVSchedule, closeModal, State } from '../src/redux';
 import {
   fetchTVShows,
 } from '../src/api';
@@ -21,6 +19,7 @@ import {
 } from '../src/components';
 import { TVSchedule } from '../src/models';
 import { useStyles } from './_styles';
+import { strings } from '../src/constants/strings';
 
 
 interface Props {
@@ -42,7 +41,7 @@ const App = ({ schedules }: Props): ReactNode => {
       <Navbar />
       <Container className={cls.root}>
         <Typography variant="h4" color="textPrimary" gutterBottom>
-          <b>Recommended For You</b>
+          <b>{strings.recommended}</b>
         </Typography>
         <Slider onClick={openModal} schedules={s.slice(9, 15)} />
         <CarrouselContainer

@@ -7,7 +7,7 @@ import { useStyles } from './pager.styles';
 import { PagerButtonProps } from '../pager-button/pager-button.props';
 
 
-interface Props extends PagerButtonProps {
+export interface PagerProps extends PagerButtonProps {
   children: JSX.Element;
   prev: Function;
   next: Function;
@@ -23,7 +23,7 @@ export const Pager = ({
   className,
   disablePrev = false,
   disableNext = false,
-}: Props) => {
+}: PagerProps) => {
   const classes = useStyles();
   return (
     <div className={cx([classes.pager, className])}>

@@ -3,7 +3,7 @@ export const strings = {
   trending: 'Trending',
   featured: 'Featured',
   watchTrailer: 'Watch Trailer',
-  popularShows: 'Popular show airing tonight',
+  popularShows: 'Popular shows airing tonight',
   privacyPolicy: 'Privacy Policy',
   tos: 'Terms of Use',
   cookiePolicy: 'Cookie Policy',

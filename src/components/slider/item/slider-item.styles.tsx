@@ -1,13 +1,12 @@
 import { makeStyles } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
 
-const useStyles = makeStyles(({ spacing, breakpoints }) => ({
+const useStyles = makeStyles(({ spacing, breakpoints, palette }) => ({
   upperCase: {
     textTransform: 'uppercase',
   },
   root: {
     borderRadius: 40,
-    backgroundColor: grey[800],
+    backgroundColor: palette.secondary.dark,
     [breakpoints.down('sm')]: {
       flexDirection: 'column',
       minHeight: spacing(60),

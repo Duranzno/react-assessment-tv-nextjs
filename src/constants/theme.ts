@@ -9,11 +9,15 @@ export const theme = createMuiTheme({
     secondary: grey,
     warning: yellow,
     text: {
+      primary: grey[700],
       disabled: grey[500],
       secondary: common.white,
     },
   },
   typography: {
+    allVariants: {
+      color: grey[700],
+    },
     h6: {
       fontWeight: 600,
     },
