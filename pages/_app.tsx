@@ -1,34 +1,35 @@
 import React from 'react';
-import { AppProps } from 'next/app';
+import App from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { Provider } from 'react-redux';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { theme } from '../src/constants/theme';
 import { Header } from '../src/components';
-import { store } from '../src/redux';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { store } from '../src/redux';
 
-function MyApp(props: AppProps): JSX.Element {
-  const { Component, pageProps } = props;
-  React.useEffect(() => {
+export default class MyApp extends App {
+  componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
-  }, []);
+  }
 
-  return (
-    <>
-      <Header title="TV Database | Home" />
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Provider store={store}>
-          <Component {...pageProps} />
-        </Provider>
-      </ThemeProvider>
-    </>
-  );
+  render() {
+    const { Component, pageProps } = this.props;
+    return (
+      <>
+        <Header title="TV Database | Home" />
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Provider store={store}>
+            <Component {...pageProps} />
+          </Provider>
+        </ThemeProvider>
+      </>
+    );
+  }
 }
-export default (MyApp);

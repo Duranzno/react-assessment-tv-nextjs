@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest:true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -27,7 +27,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     'import/extensions': [
       'error',
@@ -41,12 +41,14 @@ module.exports = {
       },
     ],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
-    'react/jsx-props-no-spreading':'off',
+    'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'no-console': 'off',
-    'implicit-arrow-linebreak':'off',
+    'arrow-parens': 'off',
+    'react/no-array-index-key': 'off',
+    'object-curly-newline': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
   overrides: [
     {

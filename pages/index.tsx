@@ -3,11 +3,12 @@ import {
   Container,
   Typography,
 } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, Provider } from 'react-redux';
 import {
   initDataAction,
   selectTVSchedule, closeModal, State,
-} from '../src/redux';
+  store,
+  initialState } from '../src/redux';
 import {
   fetchTVShows,
 } from '../src/api';
@@ -20,11 +21,11 @@ import {
 } from '../src/components';
 import { TVSchedule } from '../src/models';
 
+
 interface Props {
   schedules: TVSchedule[];
 }
-export default ({ schedules }: Props): ReactNode => {
-  // Regular redux hooks usage
+const App = ({ schedules }: Props): ReactNode => {
   const state: State = useSelector((s) => s);
   const { modalData, schedules: s } = state;
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ export default ({ schedules }: Props): ReactNode => {
     dispatch(initDataAction(schedules));
   }, []);
   const openModal = (mD) => dispatch(selectTVSchedule(mD));
+  const closeModal2 = () => dispatch(closeModal());
   return (
     <div>
       <Navbar />
@@ -50,10 +52,11 @@ export default ({ schedules }: Props): ReactNode => {
       <ProductModal
         open={!!modalData}
         schedule={modalData}
-        onClose={() => dispatch(closeModal())}
+        onClose={closeModal2}
       />
     </div>
   );
 };
 export const getStaticProps = () => fetchTVShows()
   .then((schedules) => ({ props: { schedules } }));
+export default App;
