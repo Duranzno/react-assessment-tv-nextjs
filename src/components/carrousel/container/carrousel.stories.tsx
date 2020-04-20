@@ -1,30 +1,26 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { CarrouselItem, Carrousel } from '../..';
+import { CarrouselContainer } from './carrousel-container.component';
 import { ncisSchedule } from '../../../../test/mocks/ncis.mock';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { sesameStreetSchedule } from '../../../../test/mocks/sesame-street.mock';
 
 export default {
-  component: CarrouselItem,
-  title: 'CarrouselItem',
-  decorator: [
+  component: CarrouselContainer,
+  title: 'CarrouselContainer',
+  decorators: [
     (storyFn) => (
       <>
-        <img src="" alt="_" />
+        <img src="/carrousel.png" alt="carrouse" />
         {storyFn()}
       </>
     ),
   ],
 };
 
-export const item = () => (
-  <CarrouselItem schedule={ncisSchedule} onClick={action('Clicked on Item ')} />
-);
-
-export const slick = () => (
-  <Carrousel
+export const Container = () => (
+  <CarrouselContainer
     schedules={[
       ncisSchedule,
       sesameStreetSchedule,

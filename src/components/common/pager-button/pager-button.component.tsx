@@ -2,7 +2,8 @@ import React from 'react';
 import {
   makeStyles, ButtonProps, Button,
 } from '@material-ui/core';
-import styles, { PagerButtonProps } from './buttons.styles';
+import styles from './pager-button.styles';
+import { PagerButtonProps } from './pager-button.props';
 
 type Props= ButtonProps & PagerButtonProps
 

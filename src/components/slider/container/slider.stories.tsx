@@ -7,6 +7,15 @@ import { ncisSchedule } from '../../../../test/mocks/ncis.mock';
 export default {
   component: Slider,
   title: 'Slider',
+  decorators: [
+    (storyFn) => (
+      <>
+        <img src="/slider.png" alt="pager" />
+        <br />
+        {storyFn()}
+      </>
+    ),
+  ],
 };
 
 export const item = () => (

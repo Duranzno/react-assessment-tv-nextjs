@@ -12,9 +12,8 @@ const useStyles = makeStyles({
 });
 export const TextButton = ({ children }: TypographyProps) => {
   const cls = useStyles();
-
   return (
-    <Button key={JSON.stringify(children)}>
+    <Button>
       <Typography variant="body1" className={cls.text}>
         {children}
       </Typography>

@@ -1,17 +1,17 @@
 import React from 'react';
-import { Navbar } from '..';
+import { Navbar } from './navbar.component';
 
 export default {
   component: Navbar,
   title: 'Navbar',
-  decorator: [
+  decorators: [
     (storyFn) => (
       <>
-        <img src="" alt="_" />
+        <img src="/navbar.png" alt="navbar" />
         {storyFn()}
       </>
     ),
   ],
 };
 
-export const item = () => <Navbar />;
+export const FullNavbar = () => <Navbar />;

@@ -4,8 +4,8 @@ import {
   Toolbar, Divider, Tabs, Tab,
 } from '@material-ui/core';
 
-import useStyles from './second-navbar.styles';
-import { TextButton } from '../common';
+import useStyles from './tab-navbar.styles';
+import { TextButton } from '../../common/text-button/text-button.component';
 
 
 interface Props {
@@ -27,7 +27,7 @@ export const SecondNavbar = (props: Props) => {
         <b>Trending:</b>
       </TextButton>
       {['#Coming Soon', '#FreeWatch', '#WatchNow'].map((s) => (
-        <TextButton className={classes.sectionDesktop} key={s}>
+        <TextButton className={classes.sectionDesktop}>
           {s}
         </TextButton>
       ))}

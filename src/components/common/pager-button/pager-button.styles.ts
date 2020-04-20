@@ -1,9 +1,8 @@
 import { createStyles, Theme } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
+import { PagerButtonProps } from './pager-button.props';
 
-export interface PagerButtonProps {
-  color?: 'primary' | 'secondary';
-}
+
 const styles = ({ palette }: Theme) => createStyles({
   root: {
     background: ({ color }: PagerButtonProps) => palette[color]?.main || palette.primary.main,

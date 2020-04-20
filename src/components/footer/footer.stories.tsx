@@ -4,10 +4,10 @@ import { Footer } from '..';
 export default {
   component: Footer,
   title: 'Footer',
-  decorator: [
+  decorators: [
     (storyFn) => (
       <>
-        <img src="" alt="_" />
+        <img src="/footer.png" alt="footer.png" />
         {storyFn()}
       </>
     ),

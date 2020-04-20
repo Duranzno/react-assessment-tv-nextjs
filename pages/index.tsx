@@ -15,7 +15,7 @@ import {
   Slider,
   Navbar,
   Footer,
-  Carrousel,
+  CarrouselContainer,
   ProductModal,
 } from '../src/components';
 import { TVSchedule } from '../src/models';
@@ -40,7 +40,7 @@ export default ({ schedules }: Props): ReactNode => {
           <b>Recommended For You</b>
         </Typography>
         <Slider onClick={openModal} schedules={s.slice(9, 15)} />
-        <Carrousel
+        <CarrouselContainer
           viewAll={console.log}
           schedules={s.slice(0, 8)}
           viewSpecific={openModal}

@@ -5,10 +5,12 @@ import { Pager } from './pager.component';
 export default {
   component: Pager,
   title: 'Pager',
-  decorator: [
+  decorators: [
     (storyFn) => (
       <>
-        <img src="" alt="_" />
+        <img src="/pager-grey-button.png" alt="pager" />
+        <img src="/pager-pink.png" alt="pager2" />
+        <br />
         {storyFn()}
       </>
     ),

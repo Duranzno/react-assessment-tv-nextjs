@@ -16,7 +16,7 @@ interface Props {
   viewSpecific: Function;
 }
 
-export const Carrousel = ({ schedules, viewSpecific }: Props) => {
+export const CarrouselContainer = ({ schedules, viewSpecific }: Props) => {
   const classes = useStyles();
   const refSlick = createRef<Slider>();
   const [slickIndex, setslickIndex] = useState(null);

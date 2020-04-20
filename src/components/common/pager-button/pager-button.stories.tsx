@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
-import { PagerButton } from './buttons.component';
+import { PagerButton } from './pager-button.component';
 
 export default {
   component: PagerButton,

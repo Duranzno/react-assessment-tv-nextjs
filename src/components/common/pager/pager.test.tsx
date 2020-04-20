@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-import { PagerButton } from '../buttons/buttons.component';
+import { PagerButton } from '../pager-button/pager-button.component';
 
 afterEach(cleanup);
 

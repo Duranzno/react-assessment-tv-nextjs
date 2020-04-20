@@ -6,7 +6,7 @@ import { ProductModal } from './product-modal.component';
 export default {
   component: ProductModal,
   title: 'ProductModal',
-  decorator: [
+  decorators: [
     (storyFn) => (
       <>
         <img src="" alt="_" />
