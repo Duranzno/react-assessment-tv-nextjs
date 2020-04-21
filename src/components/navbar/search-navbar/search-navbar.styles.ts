@@ -3,7 +3,7 @@ import {
 } from '@material-ui/core';
 import colors from '../../../constants/colors';
 
-const useStyles = makeStyles(({ palette, spacing }) =>
+const useStyles = makeStyles(({ palette, spacing, breakpoints }) =>
   createStyles({
     toolbar: {},
     mainGrid: {},
@@ -18,6 +18,9 @@ const useStyles = makeStyles(({ palette, spacing }) =>
       height: spacing(8),
       paddingLeft: spacing(4),
       paddingRight: spacing(4),
+      [breakpoints.down('sm')]: {
+        marginRight: spacing(14),
+      },
     },
     logoImg: {
       width: spacing(12),

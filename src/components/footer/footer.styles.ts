@@ -1,17 +1,24 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
+const useStyles = makeStyles(({ palette, spacing, breakpoints, typography }) => ({
   root: {
-    marginTop: spacing(2),
+    marginTop: spacing(4),
+    padding: spacing(0, 8),
     backgroundColor: palette.grey[200],
-    // marginTop: spacing(2),
-    //   '& > p': {
-    //     textTransform: 'none !important',
-    //   },
-    // },
+    '& p': {
+      fontSize: typography.subtitle2.fontSize,
+    },
+    '& *': {
+      alignSelf: 'center',
+    },
   },
   links: {
     display: 'flex',
+    [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
+    flexDirection: 'row',
+
   },
   grid: {
     padding: spacing(2, 2),
@@ -19,11 +26,14 @@ const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
       margin: spacing(0.5),
     },
     [breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      textAlign: 'center',
       justifyContent: 'center',
     },
   },
   divider: {
     height: spacing(3),
+    width: spacing(0.3),
     alignSelf: 'center',
   },
 }));

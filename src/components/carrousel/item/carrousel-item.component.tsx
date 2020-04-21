@@ -21,7 +21,6 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
       || schedule?.show?.image?.original;
   const cls = useStyles();
   const {
-    id,
     airdate,
     name,
     show,

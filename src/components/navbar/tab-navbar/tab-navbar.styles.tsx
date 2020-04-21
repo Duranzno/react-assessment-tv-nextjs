@@ -8,10 +8,16 @@ const useStyles = makeStyles(({ spacing }) =>
     trending: {
       width: spacing(64),
     },
+    trendingTitle: {
+      '& p': {
+
+        fontWeight: 700,
+      },
+    },
     tab: {
       textTransform: 'none',
       fontWeight: 300,
-      margin: spacing(0, 0.5),
+      margin: spacing(0, 1),
       padding: spacing(0),
       paddingBottom: spacing(2),
       minWidth: 'unset',
@@ -24,7 +30,7 @@ const useStyles = makeStyles(({ spacing }) =>
     },
     divider: {
       height: spacing(3),
-      width: spacing(0.2),
+      width: spacing(0.5),
       alignSelf: 'center',
       paddingBottom: spacing(2),
     },

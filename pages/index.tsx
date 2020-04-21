@@ -18,7 +18,6 @@ import {
   ProductModal,
 } from '../src/components';
 import { TVSchedule } from '../src/models';
-import { strings } from '../src/constants/strings';
 
 
 interface Props {
@@ -38,9 +37,6 @@ const App = ({ schedules }: Props): ReactNode => {
     <div className="root">
       <Navbar />
       <Container>
-        <Typography variant="h4" color="textPrimary" gutterBottom>
-          <b>{strings.recommended}</b>
-        </Typography>
         <Slider onClick={openModal} schedules={s.slice(9, 15)} />
         <CarrouselContainer
           viewAll={console.log}

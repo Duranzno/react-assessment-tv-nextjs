@@ -3,6 +3,7 @@ import React from 'react';
 import {
   TypographyProps, Button, makeStyles, Typography,
 } from '@material-ui/core';
+import cx from 'classnames';
 
 const useStyles = makeStyles({
   text: {
@@ -10,11 +11,11 @@ const useStyles = makeStyles({
   },
 
 });
-export const TextButton = ({ children }: TypographyProps) => {
-  const cls = useStyles();
+export const TextButton = ({ children, ...props }: TypographyProps) => {
+  const { text } = useStyles();
   return (
     <Button>
-      <Typography variant="body1" className={cls.text}>
+      <Typography {...props} variant="body1" className={text}>
         {children}
       </Typography>
     </Button>

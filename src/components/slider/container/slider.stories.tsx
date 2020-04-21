@@ -10,9 +10,9 @@ export default {
   decorators: [
     (storyFn) => (
       <>
-        <img src="/slider.png" alt="pager" />
+        <img src="/slider.png" alt="pager" style={{ width: 1525 }} />
         <br />
-        {storyFn()}
+        <div style={{ width: 1525 }}>{storyFn()}</div>
       </>
     ),
   ],

@@ -9,8 +9,8 @@ export const Footer = () => {
   const links = [strings.privacyPolicy, strings.tos, strings.cookiePolicy];
   return (
     <Toolbar className={cls.root}>
-      <Container>
-        <Grid className={cls.grid} container direction="row" justify="space-between">
+      <Container maxWidth="md">
+        <Grid className={cls.grid} container direction="row" justify="space-between" wrap="nowrap">
           <Logo />
           <Hidden smDown>
             <Divider className={cls.divider} orientation="vertical" flexItem />

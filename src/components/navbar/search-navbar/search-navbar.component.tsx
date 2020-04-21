@@ -19,7 +19,7 @@ export function SearchNavbar({ menuId, onMenuOpen }: SearchNavbarProps) {
   return (
     <Toolbar className={cls.toolbar} disableGutters>
       <Grid container className={cls.mainGrid} direction="column">
-        <Grid container className={cls.topRowGrid} alignItems="center" justify="space-around">
+        <Grid container className={cls.topRowGrid} alignItems="center" justify="space-between">
           <Grid item>
             <IconButton onClick={onMenuOpen}>
               <FontAwesomeIcon className={cls.menuIcon} icon={['fas', 'bars']} size="lg" />
@@ -31,18 +31,24 @@ export function SearchNavbar({ menuId, onMenuOpen }: SearchNavbarProps) {
           {/*
             Input
           */}
-          <Grid item xs>
-            <InputBase
-              className={cls.searchInput}
-              fullWidth
-              placeholder="Search"
-              endAdornment={(
-                <Hidden smDown>
-                  <FontAwesomeIcon className={cls.searchIcon} icon={['fas', 'search']} size="xs" />
-                </Hidden>
-              )}
-            />
-          </Grid>
+          <Hidden smDown>
+            <Grid item xs>
+              <InputBase
+                className={cls.searchInput}
+                fullWidth
+                placeholder="Search"
+                endAdornment={(
+                  <Hidden smDown>
+                    <FontAwesomeIcon
+                      className={cls.searchIcon}
+                      icon={['fas', 'search']}
+                      size="xs"
+                    />
+                  </Hidden>
+                )}
+              />
+            </Grid>
+          </Hidden>
           {/*
             Icons
           */}

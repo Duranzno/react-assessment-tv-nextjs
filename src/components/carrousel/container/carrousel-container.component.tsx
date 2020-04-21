@@ -42,11 +42,11 @@ export const CarrouselContainer = ({ schedules, viewSpecific }: Props) => {
         className={cls.root}
       >
         <div>
-          <Typography gutterBottom variant="h4" color="textPrimary">
-            <b>{strings.featured}</b>
+          <Typography gutterBottom variant="h4" color="textPrimary" className={cls.featured}>
+            {strings.featured}
           </Typography>
           <Typography gutterBottom variant="body1">
-            <b>{strings.popularShows}</b>
+            {strings.popularShows}
           </Typography>
         </div>
         <div>
@@ -65,7 +65,7 @@ export const CarrouselContainer = ({ schedules, viewSpecific }: Props) => {
               size="small"
               className={cls.pagerButton}
             >
-              <b>{strings.viewAll}</b>
+              {strings.viewAll}
             </Button>
           </Pager>
         </div>

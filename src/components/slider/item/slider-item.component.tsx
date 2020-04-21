@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, Grid } from '@material-ui/core';
 import { TVSchedule } from '../../../models';
 import useStyles from './slider-item.styles';
 import { strings } from '../../../constants/strings';
@@ -22,24 +22,27 @@ export const SliderContent = ({
   const cls = useStyles();
   const img = image.original || image.medium;
   return (
-    <div className={cls.root}>
-      <div className={cls.info}>
-        <Typography
-          color="textSecondary"
-          variant="caption"
-          gutterBottom
-          className={cls.upperCase}
-        >
-          {genres.length > 0
-            ? genres.slice(0, 3).reduce((prev, cur) => `${prev} ${cur}`, '')
-            : strings.noGenres}
-        </Typography>
-
+    <Grid container direction="row" xs={12} className={cls.root}>
+      <Grid
+        item
+        container
+        direction="column"
+        justify="space-between"
+        className={cls.info}
+        md={4}
+        xs={12}
+      >
         <div>
-          <Typography gutterBottom color="textSecondary" variant="h6" className={cls.upperCase}>
-            <b>{name}</b>
+          <Typography color="textSecondary" variant="body1" className={cls.genres}>
+            {genres.length > 0
+              ? genres.slice(0, 3).reduce((prev, cur) => `${prev} ${cur}`, '')
+              : strings.noGenres}
           </Typography>
-          <Typography gutterBottom color="textSecondary" variant="body2">
+
+          <Typography gutterBottom color="textSecondary" variant="h5" className={cls.name}>
+            {name}
+          </Typography>
+          <Typography gutterBottom color="textSecondary" variant="h6" className={cls.episodeName}>
             {episodeName}
           </Typography>
         </div>
@@ -56,14 +59,10 @@ export const SliderContent = ({
           </Button>
         </div>
         {children}
-      </div>
-      <img
-        src={img}
-        // backgroundColor: '#cccccc',
-        // }}
-        alt={name}
-        className={cls.cover}
-      />
-    </div>
+      </Grid>
+      <Grid item md={8} xs={12}>
+        <img src={img} alt={name} className={cls.cover} />
+      </Grid>
+    </Grid>
   );
 };

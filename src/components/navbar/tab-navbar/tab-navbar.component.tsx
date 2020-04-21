@@ -28,9 +28,11 @@ export const TabNavbar = () => {
     <Toolbar className={cls.toolbar} disableGutters>
       <Hidden smDown>
         <div className={cls.trending}>
-          <TextButton>
-            <b>{strings.trending}</b>
-          </TextButton>
+          <span className={cls.trendingTitle}>
+            <TextButton>
+              {strings.trending}
+            </TextButton>
+          </span>
           {strings.networks.map((s) => (
             <TextButton key={s}>{s}</TextButton>
           ))}
@@ -40,15 +42,12 @@ export const TabNavbar = () => {
       <Hidden mdUp>
         <Tabs {...TabsProps} variant="fullWidth">
           <Tab label="Home" className={cls.tab} />
-          <Tab label="Blog" disabled className={cls.tab} />
-
         </Tabs>
       </Hidden>
 
       <Hidden smDown>
         <Tabs {...TabsProps}>
-          <Tab label="Home" className={cls.tab} />
-          <Tab label="Blog" disabled className={cls.tab} />
+          <Tab label="Blog" className={cls.tab} />
 
         </Tabs>
       </Hidden>

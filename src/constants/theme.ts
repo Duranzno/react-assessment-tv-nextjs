@@ -19,9 +19,6 @@ export const theme = createMuiTheme({
     allVariants: {
       color: grey[700],
     },
-    h6: {
-      fontWeight: 600,
-    },
   },
   overrides: {
     MuiToolbar: {
