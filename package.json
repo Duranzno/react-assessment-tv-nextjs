@@ -26,7 +26,11 @@
     "react-slick": "^0.25.2",
     "@testing-library/react": "^10.0.2",
     "redux": "^4.0.5",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.9"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

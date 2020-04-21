@@ -28,7 +28,7 @@ Create a project from scratch to represent a web app with the following design:
 - [x] 2. Do not use classes, use React Hooks [https://reactjs.org/docs/hooks-intro.html](https://reactjs.org/docs/hooks-intro.html)
 - [x] 3. Use Material-UI for designing the components: [https://material-ui.com/](https://material-ui.com/)
 - [x] 4. Use Redux for managing the application state: [https://redux.js.org/](https://redux.js.org/)
-- [X] 5. Add unit testing for the components using Jest ([https://jestjs.io/en/](https://jestjs.io/en/)) or React Testing Library ([https://github.com/testing-library/react-testing-library](https://github.com/testing-library/react-testing-library))
+- [x] 5. Add unit testing for the components using Jest ([https://jestjs.io/en/](https://jestjs.io/en/)) or React Testing Library ([https://github.com/testing-library/react-testing-library](https://github.com/testing-library/react-testing-library))
 - [x] 6. Set up ESLint ([https://eslint.org/](https://eslint.org/)) and Prettier ([https://prettier.io/](https://prettier.io/)) and follow Airbnb's style guide.
 - [x] 7. Use TVMaze API ([http://www.tvmaze.com/](http://www.tvmaze.com/)) for fetching the data.
 
@@ -39,7 +39,7 @@ Create a project from scratch to represent a web app with the following design:
 - [x] 3. The "hamburger button" must pop up the menu shown in the design. The pop up has no functionality, it only shows the menu.
 - [x] 4. For the slider (carousel), choose the movies you prefer to show. The left and right buttons should go to the next or previous movie. At least add 3 movies to the slider.
 - [x] 5. In the Featured section, there should be at least 6 movies but only 4 are shown at a time. The buttons left and right should show the hidden movies.
-- [X] 6. Whenever a movie is clicked (both on the slider or the featured section) show extended information about the specific movie. It must be shown in a new fragment/page. Feel free to show the information you want and to choose the design you want. You don't have to create a new design for it if you don't want to, plain text without any format can be used.
+- [x] 6. Whenever a movie is clicked (both on the slider or the featured section) show extended information about the specific movie. It must be shown in a new fragment/page. Feel free to show the information you want and to choose the design you want. You don't have to create a new design for it if you don't want to, plain text without any format can be used.
 
 ### _Notes:_
 
@@ -52,6 +52,12 @@ Create a project from scratch to represent a web app with the following design:
 
 ![](./.github/home.png)
 ![](./.github/home-with-menu-open.png)
+
+---
+
+## Design Modifications
+
+Part of the interface shows the use of tags that would work similarly to the Hastags used in social networks, like #FreeWatch and #WatchNow but the TvMazeApi doesn't have them. The most similar item that wouldn't change hardly the design would be the TVNetwork where it is streamed the series.
 
 ## Install
 

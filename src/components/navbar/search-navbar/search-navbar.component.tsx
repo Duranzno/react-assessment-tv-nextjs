@@ -1,69 +1,68 @@
 import React from 'react';
-import {
-  Toolbar,
-  IconButton,
-  InputBase,
-} from '@material-ui/core';
 
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import PinterestIcon from '@material-ui/icons/Pinterest';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import { Logo } from '../../common';
+// import { Logo } from '../../common';
+import {
+  Toolbar, Grid, InputBase, Hidden,
+  IconButton,
+
+} from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useStyles from './search-navbar.styles';
+import { Logo } from '../../common';
 
 interface SearchNavbarProps {
     menuId: string;
     onMenuOpen: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 export function SearchNavbar({ menuId, onMenuOpen }: SearchNavbarProps) {
-  const classes = useStyles();
+  const cls = useStyles();
+  console.log(menuId);
   return (
-    <Toolbar>
-      <IconButton
-        // className={classes.menuButton}
-        color="primary"
-        aria-label="open drawer"
-        aria-controls={menuId}
-        aria-haspopup="true"
-        onClick={onMenuOpen}
-      >
-        <MenuIcon />
-      </IconButton>
-      <Logo />
-      <div className={classes.search}>
-        <InputBase
-          placeholder="Search…"
-          classes={{
-            root: classes.inputRoot,
-            input: classes.inputInput,
-          }}
-          inputProps={{ 'aria-label': 'search' }}
-          endAdornment={<SearchIcon className={classes.searchIcon} />}
-        />
-      </div>
-      <IconButton
-        aria-label="facebook"
-        color="inherit"
-        className={classes.filter}
-      >
-        <FilterListIcon />
-      </IconButton>
-      <div className={classes.grow} />
-
-      <div className={classes.sectionDesktop}>
-        <IconButton aria-label="facebook" color="inherit">
-          <FacebookIcon />
-        </IconButton>
-        <IconButton aria-label="instagram" color="inherit">
-          <InstagramIcon />
-        </IconButton>
-        <IconButton aria-label="pinterest" color="inherit">
-          <PinterestIcon />
-        </IconButton>
-      </div>
+    <Toolbar className={cls.toolbar} disableGutters>
+      <Grid container className={cls.mainGrid} direction="column">
+        <Grid container className={cls.topRowGrid} alignItems="center" justify="space-around">
+          <Grid item>
+            <IconButton onClick={onMenuOpen}>
+              <FontAwesomeIcon className={cls.menuIcon} icon={['fas', 'bars']} size="lg" />
+            </IconButton>
+          </Grid>
+          <Grid item className={cls.logoContainer}>
+            <Logo />
+          </Grid>
+          {/*
+            Input
+          */}
+          <Grid item xs>
+            <InputBase
+              className={cls.searchInput}
+              fullWidth
+              placeholder="Search"
+              endAdornment={(
+                <Hidden smDown>
+                  <FontAwesomeIcon className={cls.searchIcon} icon={['fas', 'search']} size="xs" />
+                </Hidden>
+              )}
+            />
+          </Grid>
+          {/*
+            Icons
+          */}
+          <Hidden smDown>
+            <Grid item className={cls.filterContainer}>
+              <FontAwesomeIcon className={cls.filterIcon} icon={['fas', 'filter']} size="xs" />
+            </Grid>
+            <Grid item className={cls.fbIconContainer}>
+              <FontAwesomeIcon className={cls.icon} icon={['fab', 'facebook-f']} size="sm" />
+            </Grid>
+            <Grid item className={cls.igIconContainer}>
+              <FontAwesomeIcon className={cls.icon} icon={['fab', 'instagram']} size="sm" />
+            </Grid>
+            <Grid item className={cls.ptIconContainer}>
+              <FontAwesomeIcon className={cls.icon} icon={['fab', 'pinterest-p']} size="sm" />
+            </Grid>
+          </Hidden>
+        </Grid>
+      </Grid>
     </Toolbar>
   );
 }

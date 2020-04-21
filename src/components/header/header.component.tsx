@@ -8,6 +8,7 @@ interface Props {
 export const Header = ({ title }: Props): ReactElement => (
   <Head>
     <title>{title}</title>
+
     <link rel="icon" href="/favicon.ico" />
     <link
       rel="stylesheet"

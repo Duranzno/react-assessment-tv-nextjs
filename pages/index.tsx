@@ -18,7 +18,6 @@ import {
   ProductModal,
 } from '../src/components';
 import { TVSchedule } from '../src/models';
-import { useStyles } from './_styles';
 import { strings } from '../src/constants/strings';
 
 
@@ -35,11 +34,10 @@ const App = ({ schedules }: Props): ReactNode => {
   }, []);
   const openModal = (mD) => dispatch(selectTVSchedule(mD));
   const closeModal2 = () => dispatch(closeModal());
-  const cls = useStyles();
   return (
-    <div>
+    <div className="root">
       <Navbar />
-      <Container className={cls.root}>
+      <Container>
         <Typography variant="h4" color="textPrimary" gutterBottom>
           <b>{strings.recommended}</b>
         </Typography>

@@ -1,21 +1,32 @@
 import React from 'react';
-import { Divider } from '@material-ui/core';
+import { Divider, Container, Toolbar, Grid, Hidden } from '@material-ui/core';
 import { Logo, TextButton } from '../common';
 import useStyles from './footer.styles';
-
+import { strings } from '../../constants/strings';
 
 export const Footer = () => {
-  const classes = useStyles();
+  const cls = useStyles();
+  const links = [strings.privacyPolicy, strings.tos, strings.cookiePolicy];
   return (
-    <div className={classes.root}>
-      <Logo />
-      <Divider orientation="vertical" flexItem />
+    <Toolbar className={cls.root}>
+      <Container>
+        <Grid className={cls.grid} container direction="row" justify="space-between">
+          <Logo />
+          <Hidden smDown>
+            <Divider className={cls.divider} orientation="vertical" flexItem />
+          </Hidden>
+          <div className={cls.links}>
 
-      {['Privacy Policy', 'Terms of Use', 'Cookie Policy'].map((s) => (
-        <TextButton key={s}>{s}</TextButton>
-      ))}
-      <Divider orientation="vertical" flexItem />
-      <TextButton>© 2020 TV Database. All Rights Reserved</TextButton>
-    </div>
+            {links.map((s) => (
+              <TextButton key={s}>{s}</TextButton>
+            ))}
+          </div>
+          <Hidden smDown>
+            <Divider className={cls.divider} orientation="vertical" flexItem />
+          </Hidden>
+          <TextButton>{strings.tm}</TextButton>
+        </Grid>
+      </Container>
+    </Toolbar>
   );
 };

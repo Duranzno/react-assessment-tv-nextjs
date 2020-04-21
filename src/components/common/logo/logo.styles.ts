@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/core';
 
-const useStyles = makeStyles({ root: { maxHeight: 40 } });
+const useStyles = makeStyles(({ spacing }) => createStyles({ root: { maxHeight: spacing(8) } }));
 export default useStyles;

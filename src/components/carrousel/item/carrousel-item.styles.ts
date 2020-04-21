@@ -1,55 +1,61 @@
 import { makeStyles } from '@material-ui/core';
+import { grey } from '@material-ui/core/colors';
+import { convertHex } from '../../../helpers';
 
-const useStyles = makeStyles(({ breakpoints }) => ({
-  card: { maxWidth: '17rem' },
-  cover: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 50,
+const useStyles = makeStyles(({ spacing, palette, typography }) => ({
+  card: {
+    maxWidth: spacing(35),
   },
+  imageWrapper: {
+    width: '100%',
+    minWidth: '100%',
+    position: 'relative',
+    paddingBottom: spacing(2),
+  },
+  image: {
+    width: '100%',
+    borderRadius: spacing(4),
+  },
+  imageOverlay: {
+    position: 'absolute',
+    margin: spacing(2, 1),
+    left: 0,
+    zIndex: 100,
+    right: 0,
+    width: 'unset',
+    flexWrap: 'nowrap',
+    // display: 'flex',
+    // flexDirection: 'row',
+    // justifyContent: 'space-between',
+  },
+  chip: {
+    // marginRight: '1rem',
+    padding: spacing(0.5),
+    fontSize: typography.caption.fontSize,
+  },
+  chipGrey: {
+    color: palette.text.secondary,
+    backgroundColor: convertHex(grey[200], 50),
+    '&:hover': {
+      backgroundColor: convertHex(grey[200], 35),
+    },
+    fontWeight: 800,
+  },
+  chipYellow: {
+    backgroundColor: convertHex(palette.warning.dark, 95),
+    '&:hover': {
+      backgroundColor: convertHex(palette.warning.dark, 50),
+    },
+    fontWeight: 800,
+  },
+  title: { fontWeight: 700 },
+  content: { fontWeight: 200 },
   text: {
     overflow: 'hidden',
     display: '-webkit-box',
     '-webkit-line-clamp': 4,
     paddingBottom: '10px',
     '-webkit-box-orient': 'vertical',
-  },
-  wrapper: {
-    width: '100%',
-    minHeight: '16rem',
-    minWidth: '100%',
-    padding: '1rem',
-    position: 'relative',
-  },
-  chip: {
-    marginRight: '1rem',
-  },
-  chipGrey: {
-    backgroundColor: 'rgba(0,0,0,0.5)',
-
-    borderRadius: 100,
-    color: '#ffffff',
-    textTransform: 'none',
-    width: '100%',
-    '&:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.32)',
-    },
-    [breakpoints.up('sm')]: {
-      // width: 'auto',
-    },
-  },
-  chipYellow: {
-    marginLeft: '0.5rem',
-  },
-  coverOverlay: {
-    position: 'absolute',
-    margin: '1rem 1rem 0',
-    left: 0,
-    zIndex: 100,
-    right: 0,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
 }));
 export default useStyles;

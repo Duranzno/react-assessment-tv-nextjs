@@ -1,6 +1,6 @@
 export const strings = {
   recommended: 'Recommended For You',
-  trending: 'Trending',
+  trending: 'Trending:',
   featured: 'Featured',
   watchTrailer: 'Watch Trailer',
   popularShows: 'Popular shows airing tonight',
@@ -13,4 +13,5 @@ export const strings = {
   tm: '© 2020 TV Database. All Rights Reserved',
   menuItemTitle: 'Main Menu Item #1',
   menuItemDescription: 'Short menu description',
+  networks: ['HBO', 'ABC', 'NBC', 'FOX'],
 };

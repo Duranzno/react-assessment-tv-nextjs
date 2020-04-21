@@ -2,6 +2,7 @@ import { createMuiTheme, fade } from '@material-ui/core/styles';
 import {
   yellow, grey, pink, common,
 } from '@material-ui/core/colors';
+import { colors } from '@material-ui/core';
 
 export const theme = createMuiTheme({
   palette: {
@@ -25,6 +26,11 @@ export const theme = createMuiTheme({
   overrides: {
     MuiToolbar: {
       // root
+    },
+    MuiAppBar: {
+      colorDefault: {
+        backgroundColor: colors.common.white,
+      },
     },
     MuiButton: {
       contained: {

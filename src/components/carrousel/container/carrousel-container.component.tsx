@@ -42,10 +42,10 @@ export const CarrouselContainer = ({ schedules, viewSpecific }: Props) => {
         className={cls.root}
       >
         <div>
-          <Typography variant="h4" color="textPrimary">
+          <Typography gutterBottom variant="h4" color="textPrimary">
             <b>{strings.featured}</b>
           </Typography>
-          <Typography variant="body1">
+          <Typography gutterBottom variant="body1">
             <b>{strings.popularShows}</b>
           </Typography>
         </div>

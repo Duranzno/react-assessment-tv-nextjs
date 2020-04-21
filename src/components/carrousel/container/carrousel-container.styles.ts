@@ -6,7 +6,11 @@ const useStyles = makeStyles(({ breakpoints, spacing, palette }: Theme) =>
       paddingBottom: spacing(2),
       paddingTop: spacing(6),
     },
-    pager: { [breakpoints.up('md')]: { width: spacing(25) } },
+    pager: {
+      // [breakpoints.up('sm')]: {
+      width: spacing(35),
+      // }
+    },
     pagerButton: {
       padding: spacing(0.5, 4),
     },

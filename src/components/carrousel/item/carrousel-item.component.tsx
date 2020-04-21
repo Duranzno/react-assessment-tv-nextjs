@@ -1,10 +1,9 @@
 import React from 'react';
 import {
-  Card,
-  CardActionArea,
-  CardContent,
+  Grid,
   Typography,
   Chip,
+  Paper,
 } from '@material-ui/core';
 import ReactHtmlParser from 'react-html-parser';
 import StarIcon from '@material-ui/icons/Star';
@@ -20,43 +19,39 @@ interface Props {
 export const CarrouselItem = ({ schedule, onClick }: Props) => {
   const image = schedule?.show?.image?.medium
       || schedule?.show?.image?.original;
-  const classes = useStyles();
+  const cls = useStyles();
   const {
     id,
     airdate,
     name,
-    summary,
     show,
   } = schedule;
   const dt = DateTime.fromISO(airdate).toLocaleString(DateTime.DATE_MED);
   return (
-    <Card className={classes.card}>
-      <CardActionArea onClick={() => onClick(id)}>
-        <div className={classes.wrapper}>
-          <div className={classes.coverOverlay}>
-            <Chip
-              icon={<StarIcon />}
-              label="Staff Pick"
-              color="primary"
-              className={cx([classes.chip, classes.chipYellow])}
-            />
-            <Chip
-              label={dt}
-              className={cx([classes.chip, classes.chipGrey])}
-            />
-          </div>
-          <img className={classes.cover} src={image} alt={name} />
-        </div>
-        <CardContent>
-          <Typography variant="body1">
-            <b>{show.name}</b>
-          </Typography>
-          <Typography variant="caption">{name}</Typography>
-          <div className={classes.text}>
-            {ReactHtmlParser(summary || show.summary)}
-          </div>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <Paper className={cls.card} elevation={0}>
+      <div className={cls.imageWrapper}>
+        <Grid container direction="row" justify="space-between" className={cls.imageOverlay}>
+          <Chip
+            icon={<StarIcon />}
+            label="Staff Pick"
+            color="primary"
+            className={cx([cls.chip, cls.chipYellow])}
+          />
+          <Chip label={dt} className={cx([cls.chip, cls.chipGrey])} />
+        </Grid>
+        <img className={cls.image} src={image} alt={name} />
+      </div>
+      <div className={cls.content}>
+        <Typography variant="h5" gutterBottom className={cls.title}>
+          {show.name}
+        </Typography>
+        <Typography variant="h6" gutterBottom className={cls.content}>
+          {name}
+        </Typography>
+        <Typography variant="h6" gutterBottom className={cls.content}>
+          {show.network?.name}
+        </Typography>
+      </div>
+    </Paper>
   );
 };

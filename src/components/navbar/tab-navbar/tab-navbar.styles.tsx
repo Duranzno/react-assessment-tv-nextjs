@@ -1,75 +1,32 @@
 import {
-  createStyles, makeStyles, fade, Theme,
+  createStyles, makeStyles,
 } from '@material-ui/core';
 
-const useStyles = makeStyles(({ spacing, breakpoints, shape, transitions, palette }: Theme) =>
+const useStyles = makeStyles(({ spacing }) =>
   createStyles({
-    cheat: {
-      marginRight: '16px',
-      marginLeft: '64px',
+    toolbar: {},
+    trending: {
+      width: spacing(64),
     },
-    grow: {
-      flexGrow: 1,
+    tab: {
+      textTransform: 'none',
+      fontWeight: 300,
+      margin: spacing(0, 0.5),
+      padding: spacing(0),
+      paddingBottom: spacing(2),
+      minWidth: 'unset',
     },
-    menuButton: {
-      marginRight: spacing(2),
+    tabs: {
+      alignSelf: 'flex-end',
     },
-    search: {
-      position: 'relative',
-      borderRadius: shape.borderRadius,
-      backgroundColor: fade(palette.primary.dark, 0.15),
-      '&:hover': {
-        backgroundColor: fade(palette.primary.dark, 0.25),
-      },
-      margin: spacing(0, 4),
-      // width: '100%',
-      // [breakpoints.up('sm')]: {
-      // width: '60vw',
-      // },
-      [breakpoints.down('md')]: {
-        display: 'none',
-      },
+    indicator: {
+      height: spacing(0.5),
     },
-    searchIcon: {
-      margin: spacing(0, 2),
-    },
-    inputRoot: {
-      color: 'inherit',
-    },
-    inputInput: {
-      padding: spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${spacing(4)}px)`,
-      transition: transitions.create('width'),
-      width: '100%',
-      [breakpoints.up('md')]: {
-        width: '40vw',
-      },
-    },
-    sectionDesktop: {
-      display: 'none',
-      [breakpoints.up('md')]: {
-        display: 'flex',
-      },
-    },
-    filter: {
-      [breakpoints.down('md')]: {
-        display: 'none',
-      },
-    },
-    hoverColor: {
-      '&:hover': {
-        color: 'blue', // theme.palette.primary,
-        fill: 'blue', // theme.palette.primary,
-      },
-    },
-    tabs: {},
-    tab: {},
-    sectionMobile: {
-      display: 'flex',
-      [breakpoints.up('md')]: {
-        display: 'none',
-      },
+    divider: {
+      height: spacing(3),
+      width: spacing(0.2),
+      alignSelf: 'center',
+      paddingBottom: spacing(2),
     },
   }));
 export default useStyles;

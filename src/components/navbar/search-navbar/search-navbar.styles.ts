@@ -1,74 +1,82 @@
 import {
-  createStyles, makeStyles, fade, Theme,
+  createStyles, makeStyles,
 } from '@material-ui/core';
+import colors from '../../../constants/colors';
 
-const useStyles = makeStyles(({
-  spacing, breakpoints, shape, transitions, palette,
-}: Theme) => createStyles(
-  {
-    grow: {
-      flexGrow: 1,
+const useStyles = makeStyles(({ palette, spacing }) =>
+  createStyles({
+    toolbar: {},
+    mainGrid: {},
+    topRowGrid: {
+      paddingTop: spacing(1),
+      paddingBottom: spacing(1),
     },
-    menuButton: {
-      marginRight: spacing(2),
+    menuIcon: {
+      color: colors.violetRed,
     },
-    search: {
-      position: 'relative',
-      borderRadius: shape.borderRadius,
-      backgroundColor: fade(palette.primary.dark, 0.15),
-      '&:hover': {
-        backgroundColor: fade(palette.primary.dark, 0.25),
-      },
-      margin: spacing(0, 4),
-      // width: '100%',
-      // [breakpoints.up('sm')]: {
-      // width: '60vw',
-      // },
-      [breakpoints.down('md')]: {
-        display: 'none',
-      },
+    logoContainer: {
+      height: spacing(8),
+      paddingLeft: spacing(4),
+      paddingRight: spacing(4),
+    },
+    logoImg: {
+      width: spacing(12),
+      height: spacing(6),
+    },
+
+    searchInput: {
+      // height: spacing(3),
+      // border: 'solid',
+      // borderColor: colors.alto,
+      borderRadius: spacing(2),
+      padding: spacing(0, 2, 0, 3),
+      backgroundColor: palette.secondary[200],
+      borderColor: palette.secondary[300],
+      borderStyle: 'solid',
+      borderWidth: 1,
+      // color: colors.gray,
+      // paddingLeft: spacing(3),
+      // paddingRight: spacing(3),
+      // fontFamily: 'Work Sans',
     },
     searchIcon: {
-      margin: spacing(0, 2),
+      color: colors.gray,
     },
-    inputRoot: {
-      color: 'inherit',
+    filterContainer: {
+      backgroundColor: palette.secondary[200],
+      padding: '5px 10px 5px 10px',
+      borderRadius: spacing(4),
+      marginLeft: spacing(4),
+      border: 'solid',
+      borderWidth: 1,
+      borderColor: colors.alto,
     },
-    inputInput: {
-      padding: spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${spacing(4)}px)`,
-      transition: transitions.create('width'),
-      width: '100%',
-      [breakpoints.up('md')]: {
-        width: '40vw',
-      },
+    filterIcon: {
+      color: colors.nobel,
     },
-    sectionDesktop: {
-      display: 'none',
-      [breakpoints.up('md')]: {
-        display: 'flex',
-      },
+    fbIconContainer: {
+      padding: '4px 10px 4px 10px',
+
+      backgroundColor: colors.sanMarino,
+      borderRadius: 50,
+      marginLeft: spacing(4),
     },
-    filter: {
-      [breakpoints.down('md')]: {
-        display: 'none',
-      },
+    igIconContainer: {
+      padding: '4px 9px 4px 9px',
+
+      backgroundColor: colors.amaranth,
+      marginLeft: 15,
+      borderRadius: 50,
     },
-    hoverColor: {
-      '&:hover': {
-        color: 'blue', // theme.palette.primary,
-        fill: 'blue', // theme.palette.primary,
-      },
+    ptIconContainer: {
+      padding: '4px 10px 4px 10px',
+
+      backgroundColor: colors.thunderbird,
+      marginLeft: 15,
+      borderRadius: 50,
     },
-    tabs: {},
-    tab: {},
-    sectionMobile: {
-      display: 'flex',
-      [breakpoints.up('md')]: {
-        display: 'none',
-      },
+    icon: {
+      color: palette.text.secondary,
     },
-  },
-));
+  }));
 export default useStyles;

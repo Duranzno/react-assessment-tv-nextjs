@@ -1,27 +1,30 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(({ spacing, breakpoints }) => ({
+const useStyles = makeStyles(({ palette, spacing, breakpoints }) => ({
   root: {
+    marginTop: spacing(2),
+    backgroundColor: palette.grey[200],
+    // marginTop: spacing(2),
+    //   '& > p': {
+    //     textTransform: 'none !important',
+    //   },
+    // },
+  },
+  links: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    [breakpoints.down('sm')]: {
-      flexDirection: 'column',
-      padding: 'unset',
-    },
-    padding: '2rem 6rem 0',
+  },
+  grid: {
+    padding: spacing(2, 2),
     '& > *': {
-      margin: spacing(1),
-      '& > p': {
-        textTransform: 'none !important',
-      },
+      margin: spacing(0.5),
+    },
+    [breakpoints.down('sm')]: {
+      justifyContent: 'center',
     },
   },
-  '& > hr': {
-    [breakpoints.down('sm')]: {
-      display: 'none',
-    },
+  divider: {
+    height: spacing(3),
+    alignSelf: 'center',
   },
 }));
 export default useStyles;

@@ -8,6 +8,8 @@ import { Header } from '../src/components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { store } from '../src/redux';
+import '../src/constants/icons';
+import '../styles.css';
 
 export default class MyApp extends App {
   componentDidMount() {
