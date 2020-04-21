@@ -8,13 +8,7 @@ import useStyles from './tab-navbar.styles';
 import { TextButton } from '../../common/text-button/text-button.component';
 import { strings } from '../../../constants/strings';
 
-interface Props {
-  trendingData?: string[];
-}
-
-export const SecondNavbar = (props: Props) => {
-  const { trendingData } = props;
-  console.log(trendingData);
+export const TabNavbar = () => {
   const cls = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -30,12 +24,6 @@ export const SecondNavbar = (props: Props) => {
     TabIndicatorProps: { className: cls.indicator },
     'aria-label': 'disabled tabs example',
   };
-  const TabContent = (
-    <>
-      <Tab label="Home" className={cls.tab} />
-      <Tab label="Blog" disabled className={cls.tab} />
-    </>
-  );
   return (
     <Toolbar className={cls.toolbar} disableGutters>
       <Hidden smDown>
@@ -44,19 +32,25 @@ export const SecondNavbar = (props: Props) => {
             <b>{strings.trending}</b>
           </TextButton>
           {strings.networks.map((s) => (
-            <TextButton>{s}</TextButton>
+            <TextButton key={s}>{s}</TextButton>
           ))}
         </div>
         <Divider className={cls.divider} orientation="vertical" variant="middle" flexItem />
       </Hidden>
       <Hidden mdUp>
-        <Tabs {...TabsProps} variant="fullWidth" centered>
-          {TabContent}
+        <Tabs {...TabsProps} variant="fullWidth">
+          <Tab label="Home" className={cls.tab} />
+          <Tab label="Blog" disabled className={cls.tab} />
+
         </Tabs>
       </Hidden>
 
       <Hidden smDown>
-        <Tabs {...TabsProps}>{TabContent}</Tabs>
+        <Tabs {...TabsProps}>
+          <Tab label="Home" className={cls.tab} />
+          <Tab label="Blog" disabled className={cls.tab} />
+
+        </Tabs>
       </Hidden>
     </Toolbar>
   );

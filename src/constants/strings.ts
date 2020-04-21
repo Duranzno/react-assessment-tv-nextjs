@@ -10,6 +10,7 @@ export const strings = {
   viewAll: 'View All',
   blog: 'Blog',
   home: 'Home',
+  noGenres: 'No Genres',
   tm: '© 2020 TV Database. All Rights Reserved',
   menuItemTitle: 'Main Menu Item #1',
   menuItemDescription: 'Short menu description',

@@ -45,7 +45,11 @@ export const NavbarMenu = ({
       }}
       onClose={handleMenuClose}
     >
-      {addDividerElements(Array(3).fill(element), <Divider variant="middle" />)}
+      {element}
+      <Divider variant="middle" />
+      {element}
+      <Divider variant="middle" />
+      {element}
     </Menu>
   );
 };

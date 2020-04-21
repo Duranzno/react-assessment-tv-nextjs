@@ -16,7 +16,6 @@ interface SearchNavbarProps {
 }
 export function SearchNavbar({ menuId, onMenuOpen }: SearchNavbarProps) {
   const cls = useStyles();
-  console.log(menuId);
   return (
     <Toolbar className={cls.toolbar} disableGutters>
       <Grid container className={cls.mainGrid} direction="column">

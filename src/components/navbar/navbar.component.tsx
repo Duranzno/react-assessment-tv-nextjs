@@ -3,7 +3,7 @@ import {
   AppBar, Container,
 } from '@material-ui/core';
 
-import { SecondNavbar } from './tab-navbar/tab-navbar.component';
+import { TabNavbar } from './tab-navbar/tab-navbar.component';
 import { SearchNavbar } from './search-navbar/search-navbar.component';
 import { NavbarMenu } from './navbar-menu/navbar-menu.component';
 import useStyles from './navbar.styles';
@@ -36,7 +36,7 @@ export function Navbar() {
             menuId={menuId}
             onMenuOpen={handleProfileMenuOpen}
           />
-          <SecondNavbar />
+          <TabNavbar />
         </Container>
       </AppBar>
       <NavbarMenu {...NavbarMenuProps} />

@@ -5,7 +5,7 @@ export const useStyles = makeStyles({
     display: 'inline-flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    minWidth: '6rem',
+    minWidth: '7rem',
     alignItems: 'center',
   },
 });

@@ -5,7 +5,7 @@ const useStyles = makeStyles(({ spacing }) =>
     root: {
       borderRadius: spacing(3),
       minWidth: spacing(35),
-      marginTop: spacing(6),
+      marginTop: spacing(7),
     },
     item: {
       '&:hover': {

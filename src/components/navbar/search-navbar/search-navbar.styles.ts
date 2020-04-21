@@ -44,7 +44,7 @@ const useStyles = makeStyles(({ palette, spacing }) =>
     },
     filterContainer: {
       backgroundColor: palette.secondary[200],
-      padding: '5px 10px 5px 10px',
+      padding: '5px 10px',
       borderRadius: spacing(4),
       marginLeft: spacing(4),
       border: 'solid',
@@ -55,21 +55,21 @@ const useStyles = makeStyles(({ palette, spacing }) =>
       color: colors.nobel,
     },
     fbIconContainer: {
-      padding: '4px 10px 4px 10px',
+      padding: '4px 12px',
 
       backgroundColor: colors.sanMarino,
       borderRadius: 50,
       marginLeft: spacing(4),
     },
     igIconContainer: {
-      padding: '4px 9px 4px 9px',
+      padding: '4px 9px',
 
       backgroundColor: colors.amaranth,
       marginLeft: 15,
       borderRadius: 50,
     },
     ptIconContainer: {
-      padding: '4px 10px 4px 10px',
+      padding: '4px 11px',
 
       backgroundColor: colors.thunderbird,
       marginLeft: 15,

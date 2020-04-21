@@ -5,8 +5,8 @@ const useStyles = makeStyles(({ spacing, breakpoints, palette }) => ({
     textTransform: 'uppercase',
   },
   root: {
-    borderRadius: 40,
-    backgroundColor: palette.secondary.dark,
+    borderRadius: spacing(3),
+    backgroundColor: '#373B3F',
     [breakpoints.down('sm')]: {
       flexDirection: 'column',
       minHeight: spacing(60),
@@ -14,17 +14,24 @@ const useStyles = makeStyles(({ spacing, breakpoints, palette }) => ({
     display: 'flex',
     flexDirection: 'row',
     minHeight: spacing(35),
-    maxHeight: spacing(40),
+    maxHeight: spacing(50),
   },
   info: {
-    padding: spacing(5),
+    padding: spacing(7, 9),
     display: 'flex',
+    minHeight: spacing(50),
     flexDirection: 'column',
     justifyContent: 'space-between',
     flex: '1 1 0',
   },
   button: {
-    fontWeight: 800,
+    fontWeight: 900,
+    alignSelf: 'center',
+    backgroundColor: '#26292C',
+    padding: spacing(1, 4),
+  },
+  buttonContainer: {
+    alignSelf: 'center',
   },
   cover: {
     flex: '3 1 0',
@@ -35,12 +42,12 @@ const useStyles = makeStyles(({ spacing, breakpoints, palette }) => ({
     backgroundSize: 'cover',
     backgroundPositionY: 'center',
     [breakpoints.down('sm')]: {
-      borderBottomLeftRadius: 40,
-      borderBottomRightRadius: 40,
+      borderBottomLeftRadius: spacing(3),
+      borderBottomRightRadius: spacing(3),
     },
     [breakpoints.up('sm')]: {
-      borderTopRightRadius: 40,
-      borderBottomRightRadius: 40,
+      borderTopRightRadius: spacing(3),
+      borderBottomRightRadius: spacing(3),
     },
   },
 }));
