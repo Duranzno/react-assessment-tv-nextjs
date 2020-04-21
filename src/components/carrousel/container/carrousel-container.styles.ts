@@ -1,8 +1,8 @@
 import { createStyles, Theme, makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(({ spacing }: Theme) =>
+const useStyles = makeStyles(({ spacing, palette }: Theme) =>
   createStyles({
-    featured: { fontWeight: 800 },
+    featured: { fontWeight: 800, color: palette.common.black },
     root: {
       paddingBottom: spacing(2),
       paddingTop: spacing(6),

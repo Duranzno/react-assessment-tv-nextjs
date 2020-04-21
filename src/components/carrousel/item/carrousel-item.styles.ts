@@ -10,7 +10,10 @@ const useStyles = makeStyles(({ spacing, palette, typography }) => ({
     width: '100%',
     minWidth: '100%',
     position: 'relative',
-    paddingBottom: spacing(2),
+    marginBottom: spacing(2),
+    display: 'unset',
+    borderRadius: spacing(4),
+
   },
   image: {
     width: '100%',
@@ -24,12 +27,8 @@ const useStyles = makeStyles(({ spacing, palette, typography }) => ({
     right: 0,
     width: 'unset',
     flexWrap: 'nowrap',
-    // display: 'flex',
-    // flexDirection: 'row',
-    // justifyContent: 'space-between',
   },
   chip: {
-    // marginRight: '1rem',
     padding: spacing(0.5),
     fontSize: typography.caption.fontSize,
   },

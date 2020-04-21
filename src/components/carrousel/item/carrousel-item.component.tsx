@@ -4,8 +4,8 @@ import {
   Typography,
   Chip,
   Paper,
+  ButtonBase,
 } from '@material-ui/core';
-import ReactHtmlParser from 'react-html-parser';
 import StarIcon from '@material-ui/icons/Star';
 import cx from 'classnames';
 import { DateTime } from 'luxon';
@@ -23,12 +23,13 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
   const {
     airdate,
     name,
+    id,
     show,
   } = schedule;
   const dt = DateTime.fromISO(airdate).toLocaleString(DateTime.DATE_MED);
   return (
-    <Paper className={cls.card} elevation={0}>
-      <div className={cls.imageWrapper}>
+    <Paper className={cls.card} elevation={0} onClick={() => onClick(id)}>
+      <ButtonBase className={cls.imageWrapper}>
         <Grid container direction="row" justify="space-between" className={cls.imageOverlay}>
           <Chip
             icon={<StarIcon />}
@@ -39,7 +40,7 @@ export const CarrouselItem = ({ schedule, onClick }: Props) => {
           <Chip label={dt} className={cx([cls.chip, cls.chipGrey])} />
         </Grid>
         <img className={cls.image} src={image} alt={name} />
-      </div>
+      </ButtonBase>
       <div className={cls.content}>
         <Typography variant="h5" gutterBottom className={cls.title}>
           {show.name}
